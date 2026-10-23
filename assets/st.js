@@ -120,3 +120,28 @@ document.querySelectorAll('[data-replay]').forEach(b => b.addEventListener('clic
   document.querySelectorAll('svg.replay').forEach(s => { s.classList.remove('go'); void s.getBoundingClientRect(); s.classList.add('go'); });
 }));
 document.querySelectorAll('svg.replay').forEach(s => s.classList.add('go'));
+
+// home product switcher: ARIA tabs with roving tabindex and arrow keys
+(() => {
+  const tabs = [...document.querySelectorAll('.pt')];
+  if (!tabs.length) return;
+  const pick = (t, focus) => {
+    tabs.forEach(x => {
+      const on = x === t;
+      x.setAttribute('aria-selected', on);
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+    t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => pick(t));
+    t.addEventListener('keydown', e => {
+      const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (k) { e.preventDefault(); pick(tabs[(i + k + tabs.length) % tabs.length], true); }
+      if (e.key === 'Home') { e.preventDefault(); pick(tabs[0], true); }
+      if (e.key === 'End') { e.preventDefault(); pick(tabs[tabs.length - 1], true); }
+    });
+  });
+})();

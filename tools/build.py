@@ -5,11 +5,12 @@ python tools/build.py          (images are converted once into assets/work/)
 import html, json, re
 from pathlib import Path
 
-from content import COMPANY, FIX_FEATURES, HOSTING, NEWS, PRODUCTS, SECTORS, WORK
+from content import (APP_SHOT, COMPANY, COMPARE, FIX_FEATURES, GROUPS, HOSTING, IN_USE, NEWS, PRODUCTS, RELATED,
+                     SECTORS, STEPS, WORK)
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "research"
-V = 7
+V = 10
 BASE404 = "/silvertrees-prototype/"
 YEAR = 2026
 
@@ -197,6 +198,21 @@ def shot(R, s, alt, cls="", lazy=True):
     return f'<img src="{R}assets/work/{s["file"]}" alt="{esc(alt)}" width="640" height="480"{" loading=lazy decoding=async" if lazy else ""}>'
 
 
+def host_of(item):
+    site = item.get("site")
+    if site:
+        return re.sub(r"^https?://(www\.)?", "", site).rstrip("/")
+    return item["title"] + " · by Silvertrees"
+
+
+def browser(R, item, s, alt, lazy=True, cls=""):
+    return f'''<figure class="browser {cls}"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">{esc(host_of(item))}</span></div>{shot(R, s, alt, lazy=lazy)}</figure>'''
+
+
+def app_shot(t):
+    return t["shots"][min(APP_SHOT.get(t["slug"], 1), len(t["shots"])) - 1]
+
+
 def card(R, w, cls="", tone=""):
     s = w["shots"][0]
     return f'''<a class="card {cls}" href="{R}work/{w["slug"]}.html" data-s="{w["sector"]}" data-rise>
@@ -290,12 +306,21 @@ def home():
   </div>
 </section>'''
 
-    shelf = "".join(f'''<a class="tool" href="products/{t["slug"]}.html"><span class="ix">{i + 1:02d}</span>{'<span class="free"><span class="seed live" style="--paper:#1f1e1d"></span>free</span>' if t.get("free") else ""}{glyph(t["glyph"])}<h3 class="d4">{esc(t["title"].lower())}</h3><p>{esc(t["line"])}</p></a>''' for i, t in enumerate(TOOLS))
+    tabs = "".join(f'''<button class="pt" role="tab" id="pt-{t["slug"]}" aria-controls="pp-{t["slug"]}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}" type="button">{glyph(t["glyph"], 36)}<span><b>{esc(t["title"])}</b><small>{esc(t["line"])}</small></span></button>''' for i, t in enumerate(TOOLS))
+    panels = "".join(f'''<div class="pp" role="tabpanel" id="pp-{t["slug"]}" aria-labelledby="pt-{t["slug"]}"{" hidden" if i else ""}>
+      {browser("", t, app_shot(t), t["title"] + ": " + app_shot(t)["caption"], lazy=i > 0, cls="dark")}
+      <div class="pp-copy"><p class="num" style="color:#8d8b86">{i + 1:02d} / {len(TOOLS):02d}{" · free account" if t.get("free") else ""}</p><h3 class="d3">{esc(t["title"].lower())}</h3>
+        <ul class="ticks">{"".join(f'<li><span class="seed live"></span>{esc(f)}</li>' for f in t["features"][:3])}</ul>
+        <a class="btn on-dark line" href="products/{t["slug"]}.html">see {esc(t["title"])}</a></div>
+    </div>''' for i, t in enumerate(TOOLS))
     products = f'''<section class="band dark" aria-labelledby="t-tools">
   {rings(1000, 0, [120, 200, 260, 340, 420, 470, 560, 640], "rings", "0 0 1000 600", "inset:0;width:100%;height:100%")}
   <div class="wrap" style="position:relative">
-    <div class="head"><p class="tag on-dark">our products</p><h2 class="d2" id="t-tools">tools we built <em style="color:var(--sky-night)">once,</em> for everyone.</h2><p class="lede">Inexpensive answers to complex parts of running a business: trade shows, newsletters, support tickets, surveys and secure files.</p></div>
-    <div class="shelf">{shelf}</div>
+    <div class="head"><p class="tag on-dark">our products</p><h2 class="d2" id="t-tools">tools we built <em style="color:var(--sky-night)">once,</em> for everyone.</h2><p class="lede">Inexpensive answers to complex parts of running a business: trade shows, newsletters, support tickets, surveys and secure files.</p><a class="more" href="products.html" style="color:#fff">all {len(TOOLS)} products <span class="seed"></span></a></div>
+    <div class="switch">
+      <div class="pts" role="tablist" aria-label="Silvertrees products">{tabs}</div>
+      <div class="pps">{panels}</div>
+    </div>
   </div>
 </section>'''
 
@@ -446,19 +471,108 @@ def case(item, i, items_, folder, label, kind_label):
 # ---------- products ----------
 def products_index():
     R = ""
-    rows = "".join(f'''<a class="tool" href="products/{t["slug"]}.html"><span class="ix">{i + 1:02d}</span>{'<span class="free"><span class="seed live" style="--paper:#1f1e1d"></span>free</span>' if t.get("free") else ""}{glyph(t["glyph"])}<h2 class="d4">{esc(t["title"].lower())}</h2><p>{esc(t["line"])}</p></a>''' for i, t in enumerate(TOOLS))
-    body = phead(R, [("home", "home.html")], "products", "our products.", "Silvertrees has focused on a series of innovative business tools: secure ways to do business online, systems that automate the routine, and cutting-edge technology without the development overheads or the risk.") + f'''
-<section class="band dark">
-  {rings(0, 600, [140, 220, 300, 380, 460, 560, 660], "rings", "0 0 1000 600", "inset:0;width:100%;height:100%")}
-  <div class="wrap" style="position:relative"><div class="shelf">{rows}</div></div>
+    by = {t["slug"]: t for t in TOOLS}
+    groups = ""
+    n = 0
+    for gi, (name, line, slugs) in enumerate(GROUPS):
+        rows = ""
+        for slug in slugs:
+            t = by[slug]
+            n += 1
+            used = IN_USE.get(slug)
+            rows += f'''<article class="prow">
+        {browser(R, t, app_shot(t), t["title"] + ": " + app_shot(t)["caption"])}
+        <div class="prow-copy">
+          <div class="prow-top">{glyph(t["glyph"], 44, False)}<p class="num">{n:02d}</p>{'<span class="flag"><span class="seed live" style="color:var(--hat)"></span>free account</span>' if t.get("free") else ""}</div>
+          <h3 class="d3"><a href="products/{t["slug"]}.html">{esc(t["title"].lower())}</a></h3>
+          <p class="lede" style="font-size:18px">{esc(t["line"])}</p>
+          <ul class="ticks light">{"".join(f'<li><span class="seed live"></span>{esc(f)}</li>' for f in t["features"][:3])}</ul>
+          {f'<p class="used">in use on {", ".join(f"<a href=\"{h}\">{esc(u)}</a>" for u, h, _ in used)}</p>' if used else ""}
+          <p class="acts"><a class="btn line" href="products/{t["slug"]}.html">how {esc(t["title"])} works</a>{f'<a class="more" href="{esc(t["site"])}" rel="noopener">{esc(host_of(t))} ↗</a>' if t.get("site") else ""}</p>
+        </div>
+      </article>'''
+        groups += f'''<section class="band{" mist" if gi % 2 else ""}" aria-labelledby="g{gi}">
+  <div class="wrap">
+    <div class="ghead"><p class="tag">{gi + 1:02d} · {name}</p><h2 class="d2" id="g{gi}">{esc(line.lower().rstrip("."))}.</h2></div>
+    <div class="prows">{rows}</div>
+  </div>
+</section>'''
+    idx = "".join(f'<a href="#g{gi}"><span class="num">{gi + 1:02d}</span>{name}</a>' for gi, (name, _, _) in enumerate(GROUPS))
+    cmp_rows = "".join(f"<tr><th scope=row>{k}</th><td>{a_}</td><td>{b_}</td></tr>" for k, a_, b_ in COMPARE)
+    body = phead(R, [("home", "home.html")], "products", "our products.", "Innovative business tools from Silvertrees: secure ways to do business online, systems that automate routine work, and cutting-edge technology without the development overheads or the risk.",
+                 f'<nav class="gidx" aria-label="Product groups">{idx}</nav>') + groups + f'''
+<section class="band" aria-labelledby="t-cmp">
+  <div class="wrap">
+    <div class="head"><p class="tag">which file tool</p><h2 class="d2" id="t-cmp">filexchange or <em>online doc store?</em></h2><p class="lede">Same security, different size. FileXchange is the light-weight version of Online Doc Store.</p></div>
+    <div class="tbl-wrap"><table class="cmp"><thead><tr><th scope="col"><span class="vh">Feature</span></th><th scope="col">{glyph("swap", 32, False)}<a href="products/filexchange.html">FileXchange</a></th><th scope="col">{glyph("stack", 32, False)}<a href="products/online-doc-store.html">Online Doc Store</a></th></tr></thead><tbody>{cmp_rows}</tbody></table></div>
+  </div>
 </section>
-<section class="band">
+<section class="band mist">
   <div class="wrap split">
     <div><p class="tag">why products</p><h2 class="d2" style="margin-top:20px">build once, <em>share the cost.</em></h2></div>
-    <div class="prose"><p>Our main focus is cost-effective online solutions. Each product was built for one real client need, then opened up so every business can use it for a fraction of a custom build.</p><p>They also plug into the websites we build. Classic Building's site uses FileXchange for client files; Sold Expo runs on Online Expos.</p><p><a class="more" href="contact.html#start">ask about a product <span class="seed"></span></a></p></div>
+    <div class="prose"><p>Our main focus is cost-effective online solutions: an inexpensive, reliable presence with add-on components that plug straight into the website.</p><p>The products are those add-ons. Classic Building's site uses FileXchange for client files, and Sold Expo runs on Online Expos.</p><p><a class="more" href="contact.html#start">ask about a product <span class="seed"></span></a></p></div>
   </div>
 </section>''' + start(R)
     page("products.html", "Products — Silvertrees", "Online Expos, Newsletters, the Organiser, Help Desk, Surveys in Seconds, FileXchange, Online Doc Store and e-therapy.", body, current="products")
+
+
+def product_page(t, i):
+    R = "../"
+    by = {x["slug"]: x for x in TOOLS}
+    steps = STEPS.get(t["slug"], [])
+    steps_html = "".join(f'<li><span class="sn">{k + 1}</span><h3 class="d4">{esc(h)}</h3><p>{esc(d)}</p></li>' for k, (h, d) in enumerate(steps))
+    feats = "".join(f'<li><span class="seed live"></span>{esc(f)}</li>' for f in t["features"])
+    paras = "".join(f"<p>{esc(x)}</p>" for x in t["paras"])
+    used = IN_USE.get(t["slug"], [])
+    used_html = "".join(f'<a class="note" href="{R}{h}"><p class="num">in use on</p><h3 class="d4">{esc(u.lower())}</h3><p>{esc(d)}</p><span class="more">see it <span class="seed"></span></span></a>' for u, h, d in used)
+    extra = "".join(f'<a class="note" href="{esc(l["href"])}" rel="noopener"><p class="num">live</p><h3 class="d4">{esc(host_of({"site": l["href"]}))} ↗</h3><p>{esc(l["label"])}</p></a>' for l in t.get("extra", []) if "classicbuilding" not in l["href"] and "sold-expo" not in l["href"])
+    rel = "".join(f'<a class="rel" href="{x}.html">{glyph(by[x]["glyph"], 40, False)}<span><b>{esc(by[x]["title"])}</b><small>{esc(by[x]["line"])}</small></span></a>' for x in RELATED.get(t["slug"], []))
+    app = app_shot(t)
+    prev_, next_ = TOOLS[i - 1], TOOLS[(i + 1) % len(TOOLS)]
+    acts = f'<a class="btn hat" href="{R}contact.html#start">ask about {esc(t["title"])}</a>' + (f'<a class="btn line" href="{esc(t["site"])}" rel="noopener">visit {esc(host_of(t))} ↗</a>' if t.get("site") else "")
+    body = f'''<section class="phead prod-hero">
+  {rings(900, 120, RINGS, "rings", "0 0 1000 1000")}
+  <div class="wrap" style="position:relative">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{R}home.html">home</a> <span aria-hidden="true">/</span> <a href="{R}products.html">products</a> <span aria-hidden="true">/</span> <span aria-current="page">{esc(t["title"])}</span></nav>
+    <div class="ph-grid">
+      <div class="ph-copy">
+        <div class="prow-top">{glyph(t["glyph"], 64, False)}{'<span class="flag"><span class="seed live" style="color:var(--hat)"></span>free account</span>' if t.get("free") else ""}</div>
+        <h1 class="d1">{esc(t["title"].lower())}.</h1>
+        <p class="lede">{esc(t["line"])}</p>
+        <p class="acts">{acts}</p>
+      </div>
+      {browser(R, t, app, t["title"] + ": " + app["caption"], lazy=False, cls="lift")}
+    </div>
+  </div>
+</section>
+{f'''<section class="band mist" aria-labelledby="t-how"><div class="wrap">
+  <div class="head"><p class="tag">how it works</p><h2 class="d2" id="t-how">{len(steps)} steps, <em>that's it.</em></h2></div>
+  <ol class="steps" style="--n:{len(steps)}">{steps_html}</ol>
+</div></section>''' if steps else ""}
+<section class="band">
+  <div class="wrap case-top">
+    <div class="prose"><p class="tag" style="margin-bottom:20px">about {esc(t["title"])}</p>{paras}</div>
+    <div><p class="tag" style="margin-bottom:8px">what you get</p><ul class="feat">{feats}</ul></div>
+  </div>
+</section>
+{f'<section class="band tight" style="padding-top:0"><div class="wrap"><div class="notes">{used_html}{extra}</div></div></section>' if used_html or extra else ""}
+<section class="band mist">
+  <div class="wrap">
+    {head("screens", "a look inside.", f"{len(t['shots'])} screens from {t['title']}.")}
+    {gallery(R, t)}
+  </div>
+</section>
+<section class="band tight">
+  <div class="wrap">
+    <p class="tag" style="margin-bottom:18px">works well with</p>
+    <div class="rels">{rel}</div>
+    <nav class="pager" aria-label="More products" style="margin-top:48px">
+      <a href="{prev_["slug"]}.html"><span class="num">← previous</span><span class="d3">{esc(prev_["title"].lower())}</span></a>
+      <a href="{next_["slug"]}.html"><span class="num">next →</span><span class="d3">{esc(next_["title"].lower())}</span></a>
+    </nav>
+  </div>
+</section>''' + start(R)
+    page(f"products/{t['slug']}.html", f"{t['title']} — Products — Silvertrees", t["line"], body, current="products")
 
 
 # ---------- hosting ----------
@@ -601,7 +715,7 @@ def main():
         case(w, i, SITES, "work", "work", "Work")
     products_index()
     for i, t in enumerate(TOOLS):
-        case(t, i, TOOLS, "products", "products", "Products")
+        product_page(t, i)
     hosting()
     about()
     news_pages()

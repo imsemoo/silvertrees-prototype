@@ -103,3 +103,73 @@ COMPANY = dict(
     invoices="https://www.easyinvoices.com.au/",
     devs=6, designers=2,
 )
+
+# ---------- product presentation ----------
+# grouped by the job each tool does; facts only from each product's own page
+GROUPS = [
+    ("sell and promote", "Reach customers and hear back from them.", ["online-expos", "online-newsletters", "surveys-in-seconds"]),
+    ("run the office", "Keep work, people and dates in order.", ["help-desk-ticket-support-system", "online-organiser"]),
+    ("share files securely", "Send and store documents without losing control of them.", ["filexchange", "online-doc-store"]),
+    ("for practitioners", "A complete online service, ready to join.", ["e-therapy-com-au"]),
+]
+
+# which screen shows the product working (1-based index into its screenshots)
+APP_SHOT = {"online-expos": 3, "online-newsletters": 4, "online-organiser": 1, "help-desk-ticket-support-system": 1,
+            "surveys-in-seconds": 6, "filexchange": 4, "online-doc-store": 7, "e-therapy-com-au": 2}
+
+STEPS = {
+    "online-expos": [("set up", "Create the expo and its stands, each with its own branding, style and layout."),
+                     ("present", "Exhibitors add profiles, multimedia presentations and products."),
+                     ("meet", "Visitors browse 24/7, chat live with exhibitors and buy on the spot.")],
+    "online-newsletters": [("build a list", "Create and manage your subscription lists."),
+                           ("edit", "On-page instructions guide every change. No HTML needed."),
+                           ("preview", "Send a preview to yourself with one click."),
+                           ("send or print", "Email the campaign, or output it at high resolution for print.")],
+    "surveys-in-seconds": [("create", "Choose a survey template or build your own."),
+                           ("review", "Match it to your website or brand colours with style sheets."),
+                           ("send", "Send and manage it from your account dashboard."),
+                           ("insights", "Analyse the responses with the statistics component.")],
+    "help-desk-ticket-support-system": [("log", "Tickets are categorised your way and colour-coded by status."),
+                                        ("assign", "Give any ticket to anyone, reassign it, or push it back to the client."),
+                                        ("track", "Every email, reply and attachment sits inline, with time logged per person.")],
+    "online-organiser": [("sign up free", "Open an account in a few moments."),
+                         ("add as you go", "Contacts, links, reminders and notes, from any computer."),
+                         ("back up", "Download all of it for offline viewing whenever you like.")],
+    "filexchange": [("upload", "Add documents to your secure dashboard."),
+                    ("share", "Give clients their own login, or make items public for everyone."),
+                    ("keep", "Files stay backed up and available 24/7, for as long as you want.")],
+    "online-doc-store": [("get your site", "Your own website and sub-domain, like mysite.onlinedocstore.net."),
+                         ("add clients", "Each client gets a secure login to upload and download."),
+                         ("upload and notify", "Flag new files and the right people are told automatically.")],
+    "e-therapy-com-au": [("choose", "Search for a therapist and view their details."),
+                         ("register", "Sign up as a client in a few steps."),
+                         ("book", "Book a secure online chat session from the calendar.")],
+}
+
+# where a product is already running on a Silvertrees client site
+IN_USE = {
+    "online-expos": [("Sold Expo", "work/sold-expo.html", "the online forum for real estate professionals"),
+                     ("Central Coast Business Expo", "news/the-business-expo.html", "200+ Central Coast businesses")],
+    "filexchange": [("Classic Building", "work/classic-building.html", "client files on a home builder's site")],
+    "help-desk-ticket-support-system": [("Classic Building", "work/classic-building.html", "ticket login for clients")],
+}
+
+RELATED = {
+    "online-expos": ["online-newsletters", "surveys-in-seconds"],
+    "online-newsletters": ["surveys-in-seconds", "online-expos"],
+    "surveys-in-seconds": ["online-newsletters", "help-desk-ticket-support-system"],
+    "help-desk-ticket-support-system": ["filexchange", "online-organiser"],
+    "online-organiser": ["help-desk-ticket-support-system", "online-newsletters"],
+    "filexchange": ["online-doc-store", "help-desk-ticket-support-system"],
+    "online-doc-store": ["filexchange", "help-desk-ticket-support-system"],
+    "e-therapy-com-au": ["online-doc-store", "surveys-in-seconds"],
+}
+
+# FileXchange vs Online Doc Store, as each product describes itself
+COMPARE = [
+    ("what it is", "The light-weight version", "The full product, from a 2GB basic package"),
+    ("where it lives", "Inside your existing website, or on its own", "Its own website and sub-domain"),
+    ("client logins", "Yes", "Yes, each client uploads and downloads"),
+    ("security", "Every security feature of Online Doc Store", "Secure client access to documents and files"),
+    ("backups", "Backed up, available 24/7", "Daily, weekly and monthly offsite"),
+]
