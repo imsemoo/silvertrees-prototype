@@ -9,7 +9,7 @@ from content import COMPANY, FIX_FEATURES, HOSTING, NEWS, PRODUCTS, SECTORS, WOR
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "research"
-V = 5
+V = 7
 BASE404 = "/silvertrees-prototype/"
 YEAR = 2026
 
@@ -17,11 +17,18 @@ cat = json.loads((RES / "catalog.json").read_text(encoding="utf-8"))
 raw = {p["slug"]: p for p in cat["projects"]}
 
 
+TYPOS = {"Portfoli ": "Portfolio ", "FileXhange": "FileXchange", "Tirms": "Trims", "E therapy": "e-therapy",
+         "e therapy": "e-therapy", "FileXchage": "FileXchange", "Life-Style": "lifestyle"}
+
+
 def clean(s):
     s = s.replace("�", "–").replace("\r", "").strip()
+    for a, b in TYPOS.items():
+        s = s.replace(a, b)
     s = re.sub(r"\s*\.{3,}\s*$", "…", s)
-    s = re.sub(r"\s+", " ", s)
-    return s
+    s = re.sub(r"\s*\.{2,}\s*", "… ", s)
+    s = re.sub(r"\s+-\s+", " – ", s)
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def esc(s):
@@ -233,21 +240,21 @@ def home():
         <g class="hg" mask="url(#hg)"><circle cx="140" cy="100" r="80" fill="#4D4C4A"/></g>
         <circle class="hs1" cx="188.9" cy="41.8" r="17" fill="#4D4C4A"/>
         <text class="count" x="166" y="84" text-anchor="middle">{len(SITES)}</text>
-        <text class="count-l" x="166" y="97" text-anchor="middle">sites live</text>
+        <text class="count-l" x="166" y="97" text-anchor="middle">sites built</text>
         <g mask="url(#hb)"><g clip-path="url(#hc)">
           <rect x="20" y="84" width="140" height="140" fill="#02A3FD"/>
           <g class="shotset" filter="url(#duo)">{imgs}</g>
         </g></g>
         <circle class="hs2" cx="48.1" cy="199.5" r="15" fill="#02A3FD"/>
       </svg>
-      <p class="cap" aria-live="polite"><span class="seed live" style="color:var(--sky)"></span><span>now showing <a class="reel-t" href="work/{reel[0]["slug"]}.html"><b>{esc(reel[0]["title"])}</b></a></span></p>
+      <p class="cap"><span class="seed live" style="color:var(--sky)"></span><span>now showing <a class="reel-t" href="work/{reel[0]["slug"]}.html"><b>{esc(reel[0]["title"])}</b></a></span><button class="reel-pause" type="button" aria-pressed="false" aria-label="Pause the client reel">pause</button></p>
     </div>
   </div>
 </section>'''
 
     tracks = f'''<section class="band" aria-labelledby="t-what">
   <div class="wrap">
-    {head("what we do", '<span id="t-what">three things, <em>done properly.</em></span>', "The same three tabs our clients have known for years, now with room to breathe.")}
+    {head("what we do", '<span id="t-what">three things, <em>done properly.</em></span>', "Most clients use all three: we build the site, add the tools it needs, and keep it running.")}
     <div class="tracks">
       <a class="track" href="work.html" data-rise>{glyph("web", 76, False)}<p class="num">01</p><h3 class="d3">web development</h3><p>Websites and online systems that talk to the public and quietly automate the office behind them.</p>
         <ul><li><span class="seed"></span>Brochure sites to full e-commerce</li><li><span class="seed"></span>Bookings, quotes, search, stock control</li><li><span class="seed"></span>Our own CMS, run by your staff</li></ul><span class="more">see {len(SITES)} projects <span class="seed"></span></span></a>
@@ -298,11 +305,12 @@ def home():
     <div>
       <p class="tag">the team</p>
       <h2 class="d2" id="t-crew" style="margin-top:20px">small team, <em>no compromise.</em></h2>
-      <div class="stat"><div><b>{COMPANY["devs"]}</b><span>developers</span></div><div><b>{COMPANY["designers"]}</b><span>designers</span></div><div><b>+</b><span>copywriters and content-entry gurus</span></div></div>
+      <div class="stat"><div><b>{COMPANY["devs"]}</b><span>developers</span></div><div><b>{COMPANY["designers"]}</b><span>designers</span></div></div>
+      <p style="margin:18px 0 0;color:var(--ink-2)">plus copywriters and content editors</p>
     </div>
     <div>
-      <div class="dots" role="img" aria-label="Six developers, two designers and the writers who join them">{dots}</div>
-      <p class="lede" style="margin-top:32px;max-width:44ch">Positive ideas from everyone, and every project personally managed through the whole development process. <a href="about.html">About Silvertrees</a></p>
+      <div class="dots" role="img" aria-label="Six developers, two designers and two writers">{dots}</div>
+      <p class="lede" style="margin-top:32px;max-width:44ch">Ideas come from everyone on the team, and one person manages your project from first call to launch. <a href="about.html">More about Silvertrees</a></p>
     </div>
   </div>
 </section>'''
@@ -326,7 +334,7 @@ def start(R):
     <div>
       <p class="tag">start a project</p>
       <h2 class="d1" id="t-start" style="margin-top:22px">let's build it.</h2>
-      <p class="lede" style="color:#3b2c00;margin-top:24px">Contact us to talk about what you want online. We'll tell you, plainly, how we'd do it and what it costs.</p>
+      <p class="lede" style="color:#3b2c00;margin-top:24px">Tell us what you want online. We'll tell you plainly how we'd build it and what it would cost.</p>
     </div>
     <div class="lines">
       <a href="tel:{COMPANY["tel"]}">{COMPANY["phone"]}</a>
@@ -358,10 +366,11 @@ def work_index():
         f'<button type="button" aria-pressed="false" data-f="{k}"><span class="seed"></span>{v} <span class="n">{counts[k]}</span></button>' for k, v in SECTORS.items())
     pattern = ["wide", "", "", "", "", "wide", "half", "half"]
     cards = "".join(card(R, w, "", "sky" if i % 3 == 1 else "") for i, w in enumerate(SITES))
-    body = phead(R, [("home", "home.html")], "work", "the work.", f"{len(SITES)} websites and online systems, from a podiatry practice to a marketplace that pays florists directly. Every one runs on our own content management system.") + f'''
+    body = phead(R, [("home", "home.html")], "work", "the work.", f"{len(SITES)} websites and online systems, from a podiatry practice to a marketplace that pays florists directly. Almost all of them run on our own content management system.") + f'''
 <section class="band" style="padding-top:0">
   <div class="wrap">
     <div class="filters" role="group" aria-label="Filter by sector">{filters}</div>
+    <p class="count-live" role="status">{len(SITES)} projects</p>
     <div class="grid" id="work-grid">{cards}</div>
   </div>
 </section>''' + start(R)
@@ -385,7 +394,7 @@ def case(item, i, items_, folder, label, kind_label):
         rows += [("sector", SECTORS[item["sector"]]), ("type", item["kind"])]
     else:
         rows += [("type", "Silvertrees product")] + ([("price", "free account")] if item.get("free") else [])
-    rows += [("built on", "Silvertrees CMS" if item["slug"] != "sesmo" else "WordPress"), ("screens", f'{len(item["shots"])} on file')]
+    rows += [("built on", "Silvertrees CMS" if item["slug"] != "sesmo" else "WordPress"), ("screens", str(len(item["shots"])))]
     if site:
         host = re.sub(r"^https?://(www\.)?", "", site).rstrip("/")
         rows.append(("live", f'<a href="{esc(site)}" rel="noopener">{esc(host)} ↗</a>'))
@@ -419,7 +428,7 @@ def case(item, i, items_, folder, label, kind_label):
 </section>
 <section class="band mist">
   <div class="wrap">
-    {head("screens", "a look inside.", "Screens from the build, as we filed them.")}
+    {head("screens", "a look inside.", "Screens from the finished site.")}
     {gallery(R, item)}
   </div>
 </section>
@@ -477,7 +486,7 @@ def hosting():
 def about():
     R = ""
     clients = "".join(f'<li><a href="work/{w["slug"]}.html"><span class="seed live"></span>{esc(w["title"])}</a></li>' for w in SITES)
-    body = phead(R, [("home", "home.html")], "about", "we make online <em>easier, not harder.</em>", "Silvertrees is a Sydney web development company. We provide business ideas, advice and solutions through the intelligent use of computers and the internet.") + f'''
+    body = phead(R, [("home", "home.html")], "about", "making life <em>easier, not harder.</em>", "Silvertrees is a Sydney web development company. We provide business ideas, advice and solutions through the intelligent use of computers and the internet.") + f'''
 <section class="band" style="padding-top:0">
   <div class="wrap split">
     <div class="prose">
@@ -500,7 +509,7 @@ def about():
 <section class="band mist">
   <div class="wrap crew">
     <div><p class="tag">the team</p><h2 class="d2" style="margin-top:20px">{COMPANY["devs"]} developers. {COMPANY["designers"]} designers. <em>one process.</em></h2></div>
-    <div class="prose"><p>Plus copywriters and content-entry gurus, and positive ideas from everyone. Every project is carefully architected and personally managed through the whole development process.</p><p style="font-size:22px;font-weight:600;letter-spacing:-.01em;color:var(--ink)">“Silvertrees delivers the best, literally without compromise.”</p></div>
+    <div class="prose"><p>Plus copywriters and content editors. Ideas come from everyone, and every project is planned carefully and managed personally from start to finish.</p><p style="font-size:22px;font-weight:600;letter-spacing:-.01em;color:var(--ink)">“Silvertrees delivers the best, literally without compromise.”</p></div>
   </div>
 </section>
 <section class="band">
@@ -575,7 +584,7 @@ def not_found():
     body = f'''<section class="phead" style="min-height:60vh;display:grid;align-items:center">
   {rings(700, 400, RINGS, "rings", "0 0 1000 1000")}
   <div class="wrap" style="position:relative">
-    <p class="tag" style="color:var(--hat-deep)"><span class="seed hat"></span> 404 · under construction</p>
+    <p class="tag" style="color:var(--hat-ink)"><span class="seed hat"></span> 404 · under construction</p>
     <h1 class="d1" style="margin-top:24px">this page is <em>still a seed.</em></h1>
     <p class="lede" style="margin-top:24px">Nothing has grown at this address yet. It may have moved when the site was rebuilt.</p>
     <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px"><a class="btn" href="{R}home.html">home</a><a class="btn line" href="{R}work.html">the work</a></p>

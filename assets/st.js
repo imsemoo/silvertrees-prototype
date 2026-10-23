@@ -10,7 +10,7 @@
     setTimeout(() => {
       boot.classList.add('out');
       setTimeout(() => boot.remove(), 700);
-    }, still ? 0 : 1700);
+    }, still ? 0 : 1150);
   } else if (boot) boot.remove();
 
   // header
@@ -23,6 +23,9 @@
     const open = top.classList.toggle('open');
     menu.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    // keep Tab inside the open menu
+    ['main', '.foot'].forEach(q => { const el = $(q); if (el) el.inert = open; });
+    if (open) $('.nav a').focus(); else menu.focus();
   });
   addEventListener('keydown', e => {
     if (e.key === 'Escape' && top.classList.contains('open')) menu.click();
@@ -37,17 +40,29 @@
   // hero: client sites take turns inside the blue disc
   const reel = $$('.shotset image');
   const cap = $('.reel-t');
+  const pause = $('.reel-pause');
   if (reel.length > 1 && !still) {
-    let i = 0;
+    let i = 0, held = false, stopped = false, seen = true;
+    const mark = $('.hero-mark');
+    mark.addEventListener('pointerenter', () => { held = true; });
+    mark.addEventListener('pointerleave', () => { held = false; });
+    mark.addEventListener('focusin', () => { held = true; });
+    mark.addEventListener('focusout', () => { held = false; });
+    new IntersectionObserver(([e]) => { seen = e.isIntersecting; }).observe(mark);
+    pause.addEventListener('click', () => {
+      stopped = !stopped;
+      pause.textContent = stopped ? 'play' : 'pause';
+      pause.setAttribute('aria-pressed', stopped);
+    });
     setInterval(() => {
-      if (document.hidden) return;
+      if (document.hidden || held || stopped || !seen) return;
       reel[i].classList.remove('on');
       i = (i + 1) % reel.length;
       reel[i].classList.add('on');
       cap.href = reel[i].dataset.u;
       cap.firstElementChild.textContent = reel[i].dataset.t;
-    }, 3200);
-  }
+    }, 3600);
+  } else if (pause) pause.remove();
 
   // work filters
   const grid = $('#work-grid');
@@ -55,7 +70,9 @@
     const btns = $$('.filters button');
     const apply = f => {
       btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f));
-      $$('.card', grid).forEach(c => { c.hidden = f !== 'all' && c.dataset.s !== f; });
+      let n = 0;
+      $$('.card', grid).forEach(c => { c.hidden = f !== 'all' && c.dataset.s !== f; if (!c.hidden) n++; });
+      $('.count-live').textContent = n === 1 ? '1 project' : `${n} projects`;
     };
     btns.forEach(b => b.addEventListener('click', () => {
       apply(b.dataset.f);
