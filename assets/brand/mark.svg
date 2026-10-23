@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Silvertrees">
+  <defs>
+    <mask id="mg" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240">
+      <rect width="240" height="240" fill="#fff"/>
+      <circle cx="88" cy="152" r="74" fill="#000"/>
+      <circle cx="188.9" cy="41.8" r="27" fill="#000"/>
+    </mask>
+    <mask id="mb" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240">
+      <rect width="240" height="240" fill="#fff"/>
+      <circle cx="48.1" cy="199.5" r="25" fill="#000"/>
+    </mask>
+  </defs>
+  <circle cx="140" cy="100" r="80" fill="#4D4C4A" mask="url(#mg)"/>
+  <circle cx="188.9" cy="41.8" r="17" fill="#4D4C4A"/>
+  <circle cx="88" cy="152" r="66" fill="#02A3FD" mask="url(#mb)"/>
+  <circle cx="48.1" cy="199.5" r="15" fill="#02A3FD"/>
+</svg>

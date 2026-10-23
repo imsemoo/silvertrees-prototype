@@ -1,0 +1,5 @@
+out/
+research/shots/
+research/*.html
+research/t.jpg
+tools/__pycache__/

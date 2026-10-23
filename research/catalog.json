@@ -1,0 +1,1736 @@
+{
+  "projects": [
+    {
+      "slug": "sold-expo",
+      "group": "web",
+      "title": "Sold Expo",
+      "paras": [
+        "Sold Expo provides an innovative industry based online forum for real estate professionals. Part of the Online Expos suite – Sold Expo boasts an engaging environment for businesses wanting that cutting edge over their competitors offering:",
+        "With over 40 exhibitors, Sold Expo utilises the many features of the Online Expo system through attractive business profile presentations, networking facilities, brand promotion, industry related advertisements and innovative multi-media presentations."
+      ],
+      "subheads": [],
+      "features": [
+        "Quick Registration",
+        "Chat real-time with Exhibitors",
+        "Presentations & Business profiles",
+        "24/7 Expo Access"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Sold Expo the online forum for real estate professionals",
+          "href": "http://www.sold-expo.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "sold-expo-1.jpg",
+          "caption": "Sold Expo Home"
+        },
+        {
+          "file": "sold-expo-2.jpg",
+          "caption": "Info and Exhibitor List"
+        },
+        {
+          "file": "sold-expo-3.jpg",
+          "caption": "Exhibitor Info page"
+        },
+        {
+          "file": "sold-expo-4.jpg",
+          "caption": "The Sold Expo Café"
+        },
+        {
+          "file": "sold-expo-5.jpg",
+          "caption": "Auditorium Presentation"
+        }
+      ]
+    },
+    {
+      "slug": "psychmatters",
+      "group": "web",
+      "title": "PSYCHmatters",
+      "paras": [
+        "This website is for a medium sized practice in Sydney. It was created to service local clients/new and current."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "Appointment setting function",
+        "Map/directions",
+        "Therapists"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit PSYCHmatters website",
+          "href": "http://www.psychmatters.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "psychmatters-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "psychmatters-2.jpg",
+          "caption": "Therapists"
+        },
+        {
+          "file": "psychmatters-3.jpg",
+          "caption": "Services"
+        },
+        {
+          "file": "psychmatters-4.jpg",
+          "caption": "Contact"
+        }
+      ]
+    },
+    {
+      "slug": "brydens-compensation-lawyers",
+      "group": "web",
+      "title": "Website features:",
+      "paras": [
+        "Brydens Law Firm required a website, which could deliver a strong visual message about the company, while at the same time being able to provide customers with access to forms, resources and topic related information.",
+        "The website has been built with accessible navigation (top and left side, utilising drop-down sub-menu links) which offer a a logical and satisfying browsing experience enabling visitors to quickly find what they are looking for. The right side of of internal pages include a handy office locator and customer testimonials."
+      ],
+      "subheads": [],
+      "features": [
+        "Rotating full page slideshow on home page",
+        "Customer enquiry forms",
+        "Brochure and resource downloads",
+        "Testimonials",
+        "Office locator"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Link to Brydens website",
+          "href": "http://www.brydens.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "brydens-compensation-lawyers-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "brydens-compensation-lawyers-2.jpg",
+          "caption": "About"
+        },
+        {
+          "file": "brydens-compensation-lawyers-3.jpg",
+          "caption": "Our People"
+        },
+        {
+          "file": "brydens-compensation-lawyers-4.jpg",
+          "caption": "Free Legal Advice"
+        },
+        {
+          "file": "brydens-compensation-lawyers-5.jpg",
+          "caption": "Contact "
+        }
+      ]
+    },
+    {
+      "slug": "myflowermarket",
+      "group": "web",
+      "title": "MyFlowerMarket",
+      "paras": [
+        "The ultimate marketplace for independent florists. Designed to support the florists in the area you want to send flowers TO.",
+        "Provides every florist with their own micro site, full management of all arrangements, orders, sales, workshops ...",
+        "The difference is that the customer searches the areas they want to send flowers to, and any florist in the system that will deliver there will show in the results, with featured arrangements and services. Apart from a small % for site admin, there is no charge to the Florist, and payment is managed through Stripe to pay the florists directly into their bank accounts."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "postcode and suburb search to find who delivers where you want",
+        "direct selection and purchase from the florist themselves on the site",
+        "workshops, add-ons, florist and customer dashboards, order history, reporting"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit MyFlowerMarket Website",
+          "href": "https://www.myflowermarket.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "myflowermarket-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "myflowermarket-2.jpg",
+          "caption": "Flower Blog"
+        },
+        {
+          "file": "myflowermarket-3.jpg",
+          "caption": "About"
+        },
+        {
+          "file": "myflowermarket-4.jpg",
+          "caption": "Login"
+        },
+        {
+          "file": "myflowermarket-5.jpg",
+          "caption": "Florist Login"
+        }
+      ]
+    },
+    {
+      "slug": "global-knives",
+      "group": "web",
+      "title": "Global Knives",
+      "paras": [
+        "Multilayered responsive site for the Global Knives Brand."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "Section based layouts",
+        "Responsive video functionalism",
+        "Full sales Mechanism"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Global Knives Website",
+          "href": "https://www.globalknives.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "global-knives-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "global-knives-2.jpg",
+          "caption": "Global Classic"
+        },
+        {
+          "file": "global-knives-3.jpg",
+          "caption": "Product Close Up"
+        },
+        {
+          "file": "global-knives-4.jpg",
+          "caption": "Add to Cart"
+        },
+        {
+          "file": "global-knives-5.jpg",
+          "caption": "Store Locator"
+        },
+        {
+          "file": "global-knives-6.jpg",
+          "caption": "News And Media"
+        },
+        {
+          "file": "global-knives-7.jpg",
+          "caption": "Demo"
+        }
+      ]
+    },
+    {
+      "slug": "capstar",
+      "group": "web",
+      "title": "Capstar – Shopping Functionality and Style",
+      "paras": [
+        "The Capstar website provides customers with a slick and visually pleasing experience when shopping for caps. Advanced image tools, such as the 360 degree rotation (view a cap from all angles) allow customers to view products in an innovative, attractive format.",
+        "The site is built primarily around the shopping facility, providing advanced search mechanisms where customers can search for caps by brand, style and even by colour. For those customer who wish to stay informed about specials and promotions, the site offers a member registration."
+      ],
+      "subheads": [],
+      "features": [],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Capstar website link",
+          "href": "http://www.capstar.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "capstar-1.jpg",
+          "caption": "Capstar Home Page"
+        },
+        {
+          "file": "capstar-2.jpg",
+          "caption": "Capstar Brand Caps"
+        },
+        {
+          "file": "capstar-3.jpg",
+          "caption": "Capstar Sale Page"
+        },
+        {
+          "file": "capstar-4.jpg",
+          "caption": "Gift card and promotions"
+        },
+        {
+          "file": "capstar-5.jpg",
+          "caption": "Contact Page"
+        }
+      ]
+    },
+    {
+      "slug": "trade-publishing-pty-ltd",
+      "group": "web",
+      "title": "Trade Publishing Pty Ltd",
+      "paras": [
+        "A site specifically for easy delivery of a magazine mechanism allowing the business to present a catalogue of current magazine issues and associated advertising information."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "Simple navigation",
+        "Current and featured magazine presentation",
+        "Directed enquiry forms",
+        "Simple site management tools"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Trade Publishing Pty Ltd Website",
+          "href": "http://tradepublishing.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "trade-publishing-pty-ltd-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "trade-publishing-pty-ltd-2.jpg",
+          "caption": "Free Copy"
+        },
+        {
+          "file": "trade-publishing-pty-ltd-3.jpg",
+          "caption": "Contact Us"
+        }
+      ]
+    },
+    {
+      "slug": "online-curtains",
+      "group": "web",
+      "title": "Online Curtains",
+      "paras": [
+        "For custom curtains, this site offers a simple step by step process, so customers can easily create the perfect curtain.",
+        "There is also the warehouse for special bargains ...",
+        "The site offers a simple process for the customer, but comprehensive admin functionality to manage all aspects of the site - from quotes to orders, editable parameter based calculation across all custom styles, workroom and supplier orders, customer management, newsletters, news and events ..."
+      ],
+      "subheads": [
+        "For custom curtains, this site offers a simple step by step process, so customers can easily create the perfect curtain.\r\nThere is also the warehouse for special bargains ...",
+        "Features:",
+        "save all quotes for later edit or purchase\r\n huge selection of styles, fabrics, tracks .......\r\n secure payment\r\n complete shop for separate purchase of fabrics, sliders, tracks\r\n newsletter signup with regular specials, updates, new styles"
+      ],
+      "features": [
+        "save all quotes for later edit or purchase",
+        "huge selection of styles, fabrics, tracks .......",
+        "secure payment",
+        "complete shop for separate purchase of fabrics, sliders, tracks",
+        "newsletter signup with regular specials, updates, new styles"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Online Curtains Website",
+          "href": " https://www.onlinecurtains.com"
+        }
+      ],
+      "shots": [
+        {
+          "file": "online-curtains-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "online-curtains-2.jpg",
+          "caption": "Curtain Styles"
+        },
+        {
+          "file": "online-curtains-3.jpg",
+          "caption": "Fabrics, Linings, and Tirms"
+        },
+        {
+          "file": "online-curtains-4.jpg",
+          "caption": "How To Measure"
+        },
+        {
+          "file": "online-curtains-5.jpg",
+          "caption": "Now Let's Measure"
+        },
+        {
+          "file": "online-curtains-6.jpg",
+          "caption": "Galleries"
+        },
+        {
+          "file": "online-curtains-7.jpg",
+          "caption": "Contact Us"
+        },
+        {
+          "file": "online-curtains-8.jpg",
+          "caption": "Latest News"
+        }
+      ]
+    },
+    {
+      "slug": "classic-building",
+      "group": "web",
+      "title": "classic-building",
+      "paras": [
+        "The focus of this website was to provide a visually attractive layout to display of homes, and also the provision of specific tools for visitors to interact with on the site:",
+        "You can view an example of a dynamically created brochure by clicking the link below, or visit the website and try it for yourself!"
+      ],
+      "subheads": [],
+      "features": [
+        "PDF Brochure creation of any home on the site",
+        "Enquiry forms associated with homes",
+        "Customer feedback and testimonials",
+        "Ticket login and FileXchange integration on the site",
+        "Gallery style display of homes"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Classic Building website",
+          "href": "http://www.classicbuilding.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "classic-building-1.jpg",
+          "caption": "About Classic Building"
+        },
+        {
+          "file": "classic-building-2.jpg",
+          "caption": "Classic Building Gallery"
+        },
+        {
+          "file": "classic-building-3.jpg",
+          "caption": "List of Homes"
+        },
+        {
+          "file": "classic-building-4.jpg",
+          "caption": "Brochure creation"
+        },
+        {
+          "file": "classic-building-5.jpg",
+          "caption": "FAQ section"
+        },
+        {
+          "file": "classic-building-6.jpg",
+          "caption": "Contact and location map"
+        },
+        {
+          "file": "classic-building-7.jpg",
+          "caption": "Enquiry form"
+        }
+      ]
+    },
+    {
+      "slug": "sesmo",
+      "group": "web",
+      "title": "SESMO",
+      "paras": [
+        "Sydney East Podiatry",
+        "A wordpress based site to inform you and current customers of the services offered. The site contains various display mechanisms to best present the skills and services."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "Wordpress easy content management",
+        "Simple navigation",
+        "Responsive graphic displays"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit SESMO Website",
+          "href": "http://sesmo.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "sesmo-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "sesmo-2.jpg",
+          "caption": "Meet Our Team Book Online Now"
+        },
+        {
+          "file": "sesmo-3.jpg",
+          "caption": "Our Culture"
+        },
+        {
+          "file": "sesmo-4.jpg",
+          "caption": "Our Services"
+        }
+      ]
+    },
+    {
+      "slug": "portfolio-reel",
+      "group": "web",
+      "title": "Portfolio & Reel site development",
+      "paras": [
+        "For this site the client required a tiered level subscription system where customers can select a package to suit their needs. The system itself needed to be simple to manage, despite the complexity of products and technology on offer. The front end of the site is designed with distinctive branding and simple navigation in mind. Logged in subscribers can view the current on air selection and other member-only features.",
+        "In addition to subscriptions and the vast selection of media on offer (access to professional library, including International and Local Award winning commercials dating back to the 1980's), businesses can select a package to advertise on the site in the designated advertisement area."
+      ],
+      "subheads": [],
+      "features": [
+        "Multi-level subscription/memberships",
+        "Slick and informative website",
+        "On-Air DVD selection"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        }
+      ],
+      "shots": [
+        {
+          "file": "portfolio-reel-1.jpg",
+          "caption": "Portfoli & Reel Home"
+        },
+        {
+          "file": "portfolio-reel-2.jpg",
+          "caption": "About Us page"
+        },
+        {
+          "file": "portfolio-reel-3.jpg",
+          "caption": "Industry Links"
+        },
+        {
+          "file": "portfolio-reel-4.jpg",
+          "caption": "News"
+        },
+        {
+          "file": "portfolio-reel-5.jpg",
+          "caption": "News Item"
+        }
+      ]
+    },
+    {
+      "slug": "doors-plus",
+      "group": "web",
+      "title": "Doors Plus - No Fuss",
+      "paras": [
+        "The Doors Plus website is designed to provide customers with efficient tools and innovative search mechanisms to locate products, services and catalogues.",
+        "The website provides an online store locator, which lets customers find any store in Australia - with a handy map showing directions.",
+        "Catalogues and other downloads provide customers with the latest specials.",
+        "Online Showrooms provide an enhanced view of products available through the site",
+        "Customers can also access a range of services directly from the website."
+      ],
+      "subheads": [],
+      "features": [],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Link to Doors Plus website",
+          "href": "http://www.doorsplus.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "doors-plus-1.jpg",
+          "caption": "Home page"
+        },
+        {
+          "file": "doors-plus-2.jpg",
+          "caption": "Product search"
+        },
+        {
+          "file": "doors-plus-3.jpg",
+          "caption": "Sale page"
+        },
+        {
+          "file": "doors-plus-4.jpg",
+          "caption": "Doors Plus Difference"
+        },
+        {
+          "file": "doors-plus-5.jpg",
+          "caption": "Store Locator"
+        }
+      ]
+    },
+    {
+      "slug": "viewmag",
+      "group": "web",
+      "title": "ViewMag",
+      "paras": [
+        "Sydney based lifestyle magazine site featuring current and back issues with an online viewing/reading function."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "Full page magazine views",
+        "Region/location issues"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit ViewMag Website",
+          "href": "http://viewmag.net/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "viewmag-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "viewmag-2.jpg",
+          "caption": "Regions"
+        },
+        {
+          "file": "viewmag-3.jpg",
+          "caption": "View"
+        },
+        {
+          "file": "viewmag-4.jpg",
+          "caption": "Contact"
+        }
+      ]
+    },
+    {
+      "slug": "penthouse-on-bright-point",
+      "group": "web",
+      "title": "Penthouse on Bright Point",
+      "paras": [
+        "Showcasing a beautiful holiday apartment on Magnetic Island, this website truly allows the images to speak more than a thousand words...",
+        "Background images are placed behind the page content on several pages, to give visitors a panoramic view of the surrounding area, whilst allowing interior shots and test to sit on top. The background images are simple to upload and change via the site administration area, where the system ensures each image will cover the full width of the browser page (regardless of screen resolution).",
+        "View the property and book online with the dynamic booking system built into the site. Visitors can check availability, view price information for selected dates and submit their booking without having to leave the site.",
+        "Take a virtual tour of the property by viewing the video and slideshow gallery on the site. Both these functions are fully manageable in the admin area; upload a new video, edit and/or add more images to the gallery and remove any files as required. The built-in site administration is simple to use and requires no technical expertise, allowing the site owner to make changes to text and image content as often as they like."
+      ],
+      "subheads": [
+        "Dynamic Booking System",
+        "Virtual Tour"
+      ],
+      "features": [],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Penthouse on Bright Point",
+          "href": "http://www.luxuryholidayapartment.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "penthouse-on-bright-point-1.jpg",
+          "caption": "Home page"
+        },
+        {
+          "file": "penthouse-on-bright-point-2.jpg",
+          "caption": "Make a booking"
+        },
+        {
+          "file": "penthouse-on-bright-point-3.jpg",
+          "caption": "Take a virtual tour"
+        },
+        {
+          "file": "penthouse-on-bright-point-4.jpg",
+          "caption": "View the gallery"
+        },
+        {
+          "file": "penthouse-on-bright-point-5.jpg",
+          "caption": "List of activities"
+        },
+        {
+          "file": "penthouse-on-bright-point-6.jpg",
+          "caption": "What's on in the Region"
+        },
+        {
+          "file": "penthouse-on-bright-point-7.jpg",
+          "caption": "Testimonials"
+        },
+        {
+          "file": "penthouse-on-bright-point-8.jpg",
+          "caption": "Links to other sites"
+        },
+        {
+          "file": "penthouse-on-bright-point-9.jpg",
+          "caption": "Contact enquiry form"
+        }
+      ]
+    },
+    {
+      "slug": "mwt-foods",
+      "group": "web",
+      "title": "MWT Foods",
+      "paras": [
+        "This website is designed to deliver useful and effective information to clients, business partners and supply chains. The website is simple and stylish in design. The home page uses information sliders to deliver content in a visually pleasing way, directing visitors to relevant areas on the website."
+      ],
+      "subheads": [],
+      "features": [
+        "Easy to access product & business information",
+        "Contact information and location map",
+        "Services and Business Affiliates",
+        "Image Gallery"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Link to MWT Foods website",
+          "href": "http://www.mwtfoods.com/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "mwt-foods-1.jpg",
+          "caption": "Home page"
+        },
+        {
+          "file": "mwt-foods-2.jpg",
+          "caption": "Home page with slider"
+        },
+        {
+          "file": "mwt-foods-3.jpg",
+          "caption": "MWT Food Products"
+        },
+        {
+          "file": "mwt-foods-4.jpg",
+          "caption": "Quality Management"
+        },
+        {
+          "file": "mwt-foods-5.jpg",
+          "caption": "Image Gallery"
+        },
+        {
+          "file": "mwt-foods-6.jpg",
+          "caption": "Business Affiliates"
+        },
+        {
+          "file": "mwt-foods-7.jpg",
+          "caption": "Home page   full"
+        }
+      ]
+    },
+    {
+      "slug": "jayspjs",
+      "group": "web",
+      "title": "jayspjs",
+      "paras": [
+        "JaysPJs website was designed to enhance buyer experience through attractive product displays, accessible product information and size functionality, which enables customers to add the products they wish to buy to their shopping basket straight away.",
+        "The website is easily maintained by the site owner, who has the ability to enter various sizes for any product item, manage and upload product images, edit site content and of course manage orders. The linked database includes Stock Control, which makes the shopping cart functionality simple and intuitive to maintain.",
+        "Click the enquiry button below to find out more about websites like this one. You can also view the live version by following the link below."
+      ],
+      "subheads": [],
+      "features": [
+        "Stock Control",
+        "Size/Order functionality",
+        "Simple fun design incorporating innovative product display",
+        "Enhanced buyer experience with intuitive shopping functionality"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit JaysPJs website",
+          "href": "http://www.jayspjs.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "jayspjs-1.jpg",
+          "caption": "JaysPJs Home page"
+        },
+        {
+          "file": "jayspjs-2.jpg",
+          "caption": "Product category"
+        },
+        {
+          "file": "jayspjs-3.jpg",
+          "caption": "Product detail "
+        },
+        {
+          "file": "jayspjs-4.jpg",
+          "caption": "About JaysPJs"
+        },
+        {
+          "file": "jayspjs-5.jpg",
+          "caption": "Contact JaysPJs"
+        },
+        {
+          "file": "jayspjs-6.jpg",
+          "caption": "Size chart"
+        }
+      ]
+    },
+    {
+      "slug": "hardware-glass",
+      "group": "web",
+      "title": "hardware-glass",
+      "paras": [
+        "This system is best described as a mechanism for focusing keyword based domains into one comprehensive sales and enquiry management tool, which can also accommodate a virtually infinite number of associated companies and their products. It delivers all this in a revolutionary way, leveraging search engine functionality (Google, Yahoo etc) and unique dynamic page presentation techniques.",
+        "The system allows the owner/administrator to direct literally hundreds of keyword based, generic or specific domain names to the website – and through simple to use management tools – quickly and easily create unique content for each.",
+        "In the system as it has been initially designed, the administrator is able to include any number of associated companies and instantly provide them with stand-alone websites.",
+        "Every company/category/product which has been entered into the system is also immediately integrated into a sales and enquiry management tool. The customer can (if this functionality is required) purchase items directly from anywhere within the site, and such purchases are managed according to the business rules of the company.",
+        "The main administrator is able to provide a series of sub-administrative levels to allow micro management of any area of the system. Each category and/or company can be allowed to manage its own products, categories, pricing etc. Or this can all be done centrally. Statistical analysis can also be managed centrally or through the various zones of the system.",
+        "This system has been completed and is fully functional. We have created an operational (live) version of the system for a company acting as a portal and enquiry/sales management interface between Western customers and Chinese suppliers of hardware and glass."
+      ],
+      "subheads": [],
+      "features": [],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "View the sales and enquiry system",
+          "href": "http://www.hardwareandglass.com"
+        }
+      ],
+      "shots": [
+        {
+          "file": "hardware-glass-1.jpg",
+          "caption": "Hardware & Glass Home "
+        },
+        {
+          "file": "hardware-glass-2.jpg",
+          "caption": "Search Results"
+        },
+        {
+          "file": "hardware-glass-3.jpg",
+          "caption": "Product Category"
+        },
+        {
+          "file": "hardware-glass-4.jpg",
+          "caption": "View product details"
+        },
+        {
+          "file": "hardware-glass-5.jpg",
+          "caption": "Enquiry form"
+        },
+        {
+          "file": "hardware-glass-6.jpg",
+          "caption": "Example of a sub site"
+        },
+        {
+          "file": "hardware-glass-7.jpg",
+          "caption": "Example of a sub site"
+        },
+        {
+          "file": "hardware-glass-8.jpg",
+          "caption": "FAQ Page"
+        }
+      ]
+    },
+    {
+      "slug": "scanpan",
+      "group": "web",
+      "title": "Features:",
+      "paras": [
+        "This website provides a comprehensive and dynamic listing of all the Scanpan ranges and products.",
+        "The site is a very large site which requires simple update mechanisms, CSV based product management and automatic search engine optimisation, as products and other site content is updated."
+      ],
+      "subheads": [],
+      "features": [
+        "Extensive product listing",
+        "Recipes",
+        "Customer feedback and testimonials",
+        "Competitions",
+        "Consumer blog ... and more"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Scanpan website",
+          "href": "http://www.scanpan.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "scanpan-1.jpg",
+          "caption": "Scanpan home page"
+        },
+        {
+          "file": "scanpan-2.jpg",
+          "caption": "Navigation menu"
+        },
+        {
+          "file": "scanpan-3.jpg",
+          "caption": "Category listing"
+        },
+        {
+          "file": "scanpan-4.jpg",
+          "caption": "Product listing"
+        },
+        {
+          "file": "scanpan-5.jpg",
+          "caption": "Product detail page"
+        },
+        {
+          "file": "scanpan-6.jpg",
+          "caption": "News article"
+        },
+        {
+          "file": "scanpan-7.jpg",
+          "caption": "Consumer blog"
+        },
+        {
+          "file": "scanpan-8.jpg",
+          "caption": "Care and user guides"
+        }
+      ]
+    },
+    {
+      "slug": "nepean-motor-group",
+      "group": "web",
+      "title": "Nepean Motor Group Website",
+      "paras": [
+        "The NMG website has been designed to capture its audience. Advanced multi-level search technology allows a site user to search & locate vehicles across a range of different categories (Life-Style, Brand, Type...). Once a site user finds a vehicle of interest, they can then submit an enquiry which will be automatically directed to the most appropriate staff-member or members in the company.",
+        "\"Your Choice\" provides an element of fun; a colour-picker where site visitors can select the colour scheme they wish to view the website in (and change it as often as they like)."
+      ],
+      "subheads": [],
+      "features": [
+        "Dynamic search functions",
+        "Innovative design",
+        "Customisable"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Nepean Motor Group - an innovative site by silvertrees",
+          "href": "http://www.nepeanmotorgroup.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "nepean-motor-group-1.jpg",
+          "caption": "Nepean Motor Group Home"
+        },
+        {
+          "file": "nepean-motor-group-2.jpg",
+          "caption": "Home page in Green "
+        },
+        {
+          "file": "nepean-motor-group-3.jpg",
+          "caption": "NMG home   Floral design"
+        },
+        {
+          "file": "nepean-motor-group-4.jpg",
+          "caption": "Nepean Motor Group Fleet"
+        },
+        {
+          "file": "nepean-motor-group-5.jpg",
+          "caption": "Employment page"
+        },
+        {
+          "file": "nepean-motor-group-6.jpg",
+          "caption": "Vehicle search form"
+        },
+        {
+          "file": "nepean-motor-group-7.jpg",
+          "caption": "Nepean Motor Group Blog"
+        }
+      ]
+    },
+    {
+      "slug": "bhf-couriers",
+      "group": "web",
+      "title": "BHF Couriers",
+      "paras": [
+        "BHF Couriers provide a custom service for all types of package pickup and delivery in Australia. The business models is based on being able to instantly provide the best service and price options available, and to follow up especially those with unusual or 'difficult' jobs.",
+        "The site is fully responsive (mobile friendly), account logins, saved quotes, easy paypal payment gateway ..."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "quick quotes emailed directly",
+        "business account features",
+        "full integration with various delivery services APIs",
+        ""
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit BHF Couriers Website",
+          "href": "https://www.bhfcouriers.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "bhf-couriers-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "bhf-couriers-2.jpg",
+          "caption": "Quote"
+        },
+        {
+          "file": "bhf-couriers-3.jpg",
+          "caption": "Tracking"
+        },
+        {
+          "file": "bhf-couriers-4.jpg",
+          "caption": "FAQ"
+        },
+        {
+          "file": "bhf-couriers-5.jpg",
+          "caption": "Contact Us"
+        }
+      ]
+    },
+    {
+      "slug": "di-lorenzo",
+      "group": "web",
+      "title": "Di Lorenzo",
+      "paras": [
+        "Branding and sales website for the famous Di Lorenzo Caffe brand. The site features full list of cafes with location finder developed in conjunction with the Di Lorenzo app which allows full purchase facilities, cafe locator, job listings and other information."
+      ],
+      "subheads": [
+        "Features:"
+      ],
+      "features": [
+        "Di Lorenzo apps",
+        "Cafe lists",
+        "Company and product background"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Di Lorenzo Website",
+          "href": "http://www.dilorenzocaffe.com/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "di-lorenzo-1.jpg",
+          "caption": "Home"
+        },
+        {
+          "file": "di-lorenzo-2.jpg",
+          "caption": "Home Video"
+        },
+        {
+          "file": "di-lorenzo-3.jpg",
+          "caption": "Di Lorenzo Story"
+        },
+        {
+          "file": "di-lorenzo-4.jpg",
+          "caption": "Media/Blog"
+        }
+      ]
+    },
+    {
+      "slug": "online-expos",
+      "group": "product",
+      "title": "Online Expos",
+      "paras": [
+        "Why would online-expos.com be the world's most powerful online tradeshow system?",
+        "This is quite possibly the most powerful online tradeshow system available, remarkably simple to manage, and completely customisable. Features range from e-commerce and live chat, to easily tailored multi-media presentations. No special applications are required to view content and every expo is optimised automatically to allow users with lower bandwidth to still be able to take advantage of special expo features.",
+        "Silvertrees web development has worked for over 10 years in the creation of online systems – websites, data-management and multi-media delivery. As a mechanism for instant and interactive contact with an audience, the internet has no equal, and it seemed to us a logical (and necessary) step to take one of the most expensive and complex ways of promoting business – i.e. THE TRADE SHOW and bring it online in a simple and inexpensive way."
+      ],
+      "subheads": [],
+      "features": [
+        "Easy to manage: User-friendly administration makes online expo easy to use & promote.",
+        "Entirely customisable: Individualise your Expo & Stands with branding, style and layout to suit.",
+        "Packed with features: Blogs, e-Commerce, Live Chat, Statistics, & multi-media presentation tools."
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Online Expos for information and feature demos",
+          "href": "http://www.online-expos.com/"
+        },
+        {
+          "label": "Sold Expo - the online expo for real estate professionals",
+          "href": "http://www.sold-expo.com.au/"
+        },
+        {
+          "label": "View presentations and engage with businesses on the Central Coast",
+          "href": "http://www.ccbusinessshowcase.com.au/"
+        },
+        {
+          "label": "Presentations by innovative Central Coast businesses",
+          "href": "http://innovation.online-expos.com/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "online-expos-1.jpg",
+          "caption": "Online Expos Home page"
+        },
+        {
+          "file": "online-expos-2.jpg",
+          "caption": "Multimedia Presentations"
+        },
+        {
+          "file": "online-expos-3.jpg",
+          "caption": "Online Expo Stands"
+        },
+        {
+          "file": "online-expos-4.jpg",
+          "caption": "Latest news "
+        },
+        {
+          "file": "online-expos-5.jpg",
+          "caption": "Find out more on FAQ page"
+        }
+      ]
+    },
+    {
+      "slug": "online-newsletters",
+      "group": "product",
+      "title": "Start your Online Marketing today!",
+      "paras": [
+        "Online Newsletters is part of the suite of online solutions and products developed by silvertrees. This product has evolved in response to growing demand for a simple yet effective solution to create and manage newsletters, without the need to outsource or acquire technical skills in the process.",
+        "Our products include:",
+        "The online newsletter emailing system is revolutionary, so simple and a delight to, use even for users with no previous experience of HTML editing. On-page instructions guide you through the simple process of editing and saving each newsletter you create, and before you send you can send a preview to yourself with one simple click."
+      ],
+      "subheads": [],
+      "features": [
+        "E-list email marketing system",
+        "Advanced newsletter system – HTML inserts",
+        "Extendable layout HTML newsletter",
+        "Fixed layout newsletter – HTML or hi-res for print"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Online Newsletters for more information",
+          "href": "http://www.online-newsletters.net/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "online-newsletters-1.jpg",
+          "caption": "Online Newsletters home page"
+        },
+        {
+          "file": "online-newsletters-2.jpg",
+          "caption": "About us page"
+        },
+        {
+          "file": "online-newsletters-3.jpg",
+          "caption": "Latest news and articles"
+        },
+        {
+          "file": "online-newsletters-4.jpg",
+          "caption": "User dashboard "
+        },
+        {
+          "file": "online-newsletters-5.jpg",
+          "caption": "List newsletters"
+        },
+        {
+          "file": "online-newsletters-6.jpg",
+          "caption": "Update & edit newsletter"
+        }
+      ]
+    },
+    {
+      "slug": "online-organiser",
+      "group": "product",
+      "title": "Silvertrees Online Organiser puts every thing at your finger tips!",
+      "paras": [
+        "Silvertrees have developed this great tool, which enables you to get organised and keep all your important bits and pieces in your secure online organiser account:",
+        "Never forget an important meeting, date or event with the innovative reminder tool. With the Silvertrees Organiser you can access your links, contacts and other useful information from any computer. Plus - you can back up all your notes, contacts, reminders at any time with the click of a button..."
+      ],
+      "subheads": [
+        "Click here to open your FREE account today!",
+        "Click the Enquiry button below to find out more about this simple tool."
+      ],
+      "features": [
+        "Keep all your contacts in one place",
+        "Set up reminders and let the organiser take care of the rest",
+        "Send an email message directly from within the organiser",
+        "Save your favourite web pages and access them from any computer"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "This link takes you to the Organiser login page ",
+          "href": "http://www.onlineorganiser.net"
+        }
+      ],
+      "shots": [
+        {
+          "file": "online-organiser-1.jpg",
+          "caption": "Manage your contacts"
+        },
+        {
+          "file": "online-organiser-2.jpg",
+          "caption": "Send email to contact"
+        },
+        {
+          "file": "online-organiser-3.jpg",
+          "caption": "Quick Links to sites"
+        },
+        {
+          "file": "online-organiser-4.jpg",
+          "caption": "Edit Quick Links"
+        },
+        {
+          "file": "online-organiser-5.jpg",
+          "caption": "Manage reminders"
+        },
+        {
+          "file": "online-organiser-6.jpg",
+          "caption": "Add a new reminder"
+        },
+        {
+          "file": "online-organiser-7.jpg",
+          "caption": "Create note categories "
+        },
+        {
+          "file": "online-organiser-8.jpg",
+          "caption": "View and edit notes"
+        },
+        {
+          "file": "online-organiser-9.jpg",
+          "caption": "Add note"
+        }
+      ]
+    },
+    {
+      "slug": "help-desk-ticket-support-system",
+      "group": "product",
+      "title": "help-desk-ticket-support-system",
+      "paras": [
+        "The Silvertrees Ticket Support system is designed to simplify and enable efficient management of work processes and client interactions. Tiered administration levels enable you to set up users with different access privileges based on their administration or client role.",
+        "Support tickets are categorised based on your requirements and also their current status, which provides a colour-coded overview, enabling you to manage more urgent items first. Any ticket can be assigned to anyone on the team, reassigned, pushed back up the system, or to the client .....simply and quickly",
+        "Each ticket files all emails, responses, attachments and allows you to manage all processes 'inline' - which makes it simple to view any previous comments, attachments and assignments relating to the issue.",
+        "For every ticket, you can monitor the time taken, by each person, or for any aspect of the job, allowing comprehensive project analysis, as well as easy time reporting at any stage for complex projects involving many tickets, and many people.",
+        "A full screen Calendar view also allows instant 'real life' views of all ongoing projects, making scheduling and deadline management easy."
+      ],
+      "subheads": [],
+      "features": [],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        }
+      ],
+      "shots": [
+        {
+          "file": "help-desk-ticket-support-system-1.jpg",
+          "caption": "Help desk ticket list"
+        },
+        {
+          "file": "help-desk-ticket-support-system-2.jpg",
+          "caption": "Reply to ticket"
+        },
+        {
+          "file": "help-desk-ticket-support-system-3.jpg",
+          "caption": "Create ticket"
+        },
+        {
+          "file": "help-desk-ticket-support-system-4.jpg",
+          "caption": "Search for ticket"
+        },
+        {
+          "file": "help-desk-ticket-support-system-5.jpg",
+          "caption": "Grouped tickets"
+        },
+        {
+          "file": "help-desk-ticket-support-system-6.jpg",
+          "caption": "Ticket with multiple replies"
+        }
+      ]
+    },
+    {
+      "slug": "surveys-in-seconds",
+      "group": "product",
+      "title": "Create a Survey in Seconds",
+      "paras": [
+        "Are you looking for the ultimate survey tool for your customers? Surveys in Seconds provides an easy to use, yet amazingly powerful tool for gathering invaluable feedback from your customers.",
+        "Create. Review. Send. Insights. The only steps you need to create your surveys in seconds, and to get access to powerful insights. We have the right pricing and package for you to get started."
+      ],
+      "subheads": [],
+      "features": [
+        "Choose from a range of survey templates or create your own.",
+        "Use style sheets to match your website or brand colours.",
+        "Sending and managing survey results is made simple from your account dashboard.",
+        "Analyse responses using the powerful statistics component."
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        }
+      ],
+      "shots": [
+        {
+          "file": "surveys-in-seconds-1.jpg",
+          "caption": "Surveys in Seconds"
+        },
+        {
+          "file": "surveys-in-seconds-2.jpg",
+          "caption": "Getting Started"
+        },
+        {
+          "file": "surveys-in-seconds-3.jpg",
+          "caption": "Template example"
+        },
+        {
+          "file": "surveys-in-seconds-4.jpg",
+          "caption": "Surveys in Seconds Plans"
+        },
+        {
+          "file": "surveys-in-seconds-5.jpg",
+          "caption": "Account dashboard"
+        },
+        {
+          "file": "surveys-in-seconds-6.jpg",
+          "caption": "Manage your Surveys"
+        },
+        {
+          "file": "surveys-in-seconds-7.jpg",
+          "caption": "Analyse Survey results"
+        }
+      ]
+    },
+    {
+      "slug": "filexchange",
+      "group": "product",
+      "title": "So - why would you use FileXchange?",
+      "paras": [
+        "FileXchange is the light-weight version of our Online Docstore product, designed to be integrated with your existing website or used as a free-standing product. FileXchange is all about fast and secure file sharing, secure file storage, and simple management, and includes every security features provided with Online Docstore.",
+        "Simple really. For other large file transfer or online storage solutions you are usually signing away your copyright ...",
+        "You are also risking losing your data, as many services spread your data across the web on many servers, with little or no guarantee that if anything goes astray they will even bother rescuing it for you. On top of that, after a period of time you lose access to the files. With FileXchange, your files are secure, backed up and available 24/7 for you and your clients ... and for as long as you want.",
+        "The perfect solution for accountants, mortgage brokers, design houses, advertising agencies - share big files - Securely ........ and never worry about a lost attachment again."
+      ],
+      "subheads": [],
+      "features": [
+        "Secure and fast file sharing",
+        "Public Document section for those items that you want available for all ...",
+        "User-friendly account dashboard makes it easy to manage your files."
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit FileXchage and sign up today",
+          "href": "http://www.filexchange.com.au/"
+        },
+        {
+          "label": "View example of FileXchange integration on website",
+          "href": "http://www.classicbuilding.com.au/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "filexchange-1.jpg",
+          "caption": "FileXchange home page"
+        },
+        {
+          "file": "filexchange-2.jpg",
+          "caption": "FileXhange about"
+        },
+        {
+          "file": "filexchange-3.jpg",
+          "caption": "FileXchange plans "
+        },
+        {
+          "file": "filexchange-4.jpg",
+          "caption": "FileXchange Dashboard"
+        },
+        {
+          "file": "filexchange-5.jpg",
+          "caption": "Manage Documents"
+        },
+        {
+          "file": "filexchange-6.jpg",
+          "caption": "Add document"
+        },
+        {
+          "file": "filexchange-7.jpg",
+          "caption": "Manage and create users"
+        },
+        {
+          "file": "filexchange-8.jpg",
+          "caption": "FileXchange login"
+        },
+        {
+          "file": "filexchange-9.jpg",
+          "caption": "FileXchange contact"
+        }
+      ]
+    },
+    {
+      "slug": "online-doc-store",
+      "group": "product",
+      "title": "Welcome to Online Doc Store!",
+      "paras": [
+        "An innovative product from silvertrees web development, which makes sharing and storing documents a breeze.",
+        "With your online doc store account, you receive your very own website and sub-domain (for example: mysite.onlinedocstore.net). Your online doc store website comes fully equipped with an easy admin, which allows you to customize your page content, add and manage your clients (users) and upload unlimited file types. With online doc store's basic 2GB package; uploading, sharing and collating files and documents has never been easier. Flag documents and files with the option to automatically notify users of new files. Each client (user) you add, receives their own secure login, from where can upload files and view all documents you have made available to them."
+      ],
+      "subheads": [],
+      "features": [
+        "Secure client access to document & files",
+        "Easy admin – add and notify clients in seconds",
+        "Unlimited file types / extensions",
+        "2GB basic package",
+        "Manage maximum file size",
+        "Easy upgrade to larger storage",
+        "Daily Backup – Weekly backup – Monthly offsite backup"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit Online Doc Store for more information and registration",
+          "href": "http://www.onlinedocstore.net/"
+        }
+      ],
+      "shots": [
+        {
+          "file": "online-doc-store-1.jpg",
+          "caption": "Online Doc Store Home"
+        },
+        {
+          "file": "online-doc-store-2.jpg",
+          "caption": "Online Doc Store   new about us page"
+        },
+        {
+          "file": "online-doc-store-3.jpg",
+          "caption": " Contact Online Docstore"
+        },
+        {
+          "file": "online-doc-store-4.jpg",
+          "caption": "Example sub domain home and member login"
+        },
+        {
+          "file": "online-doc-store-5.jpg",
+          "caption": "Example of sub domain page"
+        },
+        {
+          "file": "online-doc-store-6.jpg",
+          "caption": "User Document Downloads"
+        },
+        {
+          "file": "online-doc-store-7.jpg",
+          "caption": "Easy Document overview"
+        },
+        {
+          "file": "online-doc-store-8.jpg",
+          "caption": "Example of user document overview"
+        },
+        {
+          "file": "online-doc-store-9.jpg",
+          "caption": "Easy management of document uploads"
+        },
+        {
+          "file": "online-doc-store-10.jpg",
+          "caption": "Online Doc Store   Register"
+        }
+      ]
+    },
+    {
+      "slug": "e-therapy-com-au",
+      "group": "product",
+      "title": "Welcome to e-therapy!",
+      "paras": [
+        "e-therapy offers you the latest in secure online therapy sessions. All you need to do is select a therapist & register as a client. Once you have completed registration you will be able to book your first online session, it's that easy!",
+        "The e-therapy system offers flexibility to both clients and therapists. e-therapy allows clients to book secure chat sessions online, selecting from a range of different therapists.",
+        "All therapists who register with e-therapy receive their own sub-domain and are easy to locate on our therapist search page. The e-therapy service is available – and useful – for all types of therapists: psychologists, nutritionists, counsellors, occupational therapists ... and many more."
+      ],
+      "subheads": [],
+      "features": [
+        "Secure",
+        "24/7 access",
+        "Flexible & convenient",
+        "Calendar booking"
+      ],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        },
+        {
+          "label": "Visit e-therapy for information and easy registration",
+          "href": "http://www.e-therapy.com.au"
+        }
+      ],
+      "shots": [
+        {
+          "file": "e-therapy-com-au-1.jpg",
+          "caption": "e therapy website home"
+        },
+        {
+          "file": "e-therapy-com-au-2.jpg",
+          "caption": "Search Therapists"
+        },
+        {
+          "file": "e-therapy-com-au-3.jpg",
+          "caption": "Client instructions"
+        },
+        {
+          "file": "e-therapy-com-au-4.jpg",
+          "caption": "FAQ section"
+        },
+        {
+          "file": "e-therapy-com-au-5.jpg",
+          "caption": "Select E therapy plan"
+        },
+        {
+          "file": "e-therapy-com-au-6.jpg",
+          "caption": "View therapist details"
+        },
+        {
+          "file": "e-therapy-com-au-7.jpg",
+          "caption": "Blog posts on E therapy"
+        },
+        {
+          "file": "e-therapy-com-au-8.jpg",
+          "caption": "Therapist login page"
+        }
+      ]
+    },
+    {
+      "slug": "silvertrees-hosting",
+      "group": "hosting",
+      "title": "Silvertrees Hosting with peace of mind",
+      "paras": [
+        "Silvertrees provides a range of hosting packages tailored to meet your specific needs. Our secure servers are located at a state of the art data centre in Alexandria, Sydney – providing daily backups, technical support and dedicated servers for those requiring large online storage.",
+        "Silvertrees business hosting package extends the standard package by giving you database access where you can create subscription lists & manage resources, set up e-commerce facilities with online management of sales, order reports, invoices and products.",
+        "The business hosting package incorporates all the standard features suited to dynamic multi-purpose site layouts incorporating advertising, contact forms and a good all-round admin with file and page content management.",
+        "Silvertrees standard website hosting package gives you an affordable online presence. This package is designed for general multi-purpose site layouts incorporating advertising, contact forms and a good all-round admin with file and page content management.",
+        "Silvertrees webmail (included in hosting packages or as a stand-alone product) gives you up to 5 unique email accounts (with many more aliases), and allows you to access and administer your email from anywhere. You can add/ delete users, monitor emails within domains, share files and calendars with other users, set up email forwarding, anti-spam filters and a host of other features all available from your own online webmail admin area."
+      ],
+      "subheads": [],
+      "features": [],
+      "links": [
+        {
+          "label": "Webmail",
+          "href": "https://mail.silvertrees.net:7443/surgeweb"
+        },
+        {
+          "label": "Mail Admin",
+          "href": "https://mail.silvertrees.net:7443/cgi/user.cgi"
+        }
+      ],
+      "shots": [
+        {
+          "file": "silvertrees-hosting-1.jpg",
+          "caption": "Hosting by silvertrees"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "slug": "online-newsletters",
+      "title": "Making online business Simpler",
+      "paras": [
+        "Making life easier not harder",
+        "Online Newsletters provides a unique email marketing system with a range of attractive products designed to allow you to create and manage newsletter subscription lists, create and send email campaigns for high-resolution output and for the web without the need for expensive software or expensive design studios.",
+        "Manage and create professional newsletters online from your very own user-friendly online newsletter account dashboard.",
+        "Product Selection:",
+        "You can even design your own newsletter layout:",
+        "Copyright 2026 Silvertrees - Contact us - Terms & Conditions - Secure email - Silvertrees web development",
+        "See how easy invoices will help you and your clients without spending a cent."
+      ]
+    },
+    {
+      "slug": "the-silvertrees-organiser",
+      "title": "Making online business Simpler",
+      "paras": [
+        "Making life easier not harder",
+        "One of the latest products to go live from the silvertrees development team is the Organiser. We're very excited about what this simple yet highly efficient product can do. Setting up your organiser account only takes a few moments - and once set up you can jump straight in and start adding links, contacts, reminders and notes on the fly - ensuring that you stay on top of all the important stuff. You can access your data from any computer, anywhere.... you can even download a backup of all your data for offline viewing.",
+        "Copyright 2026 Silvertrees - Contact us - Terms & Conditions - Secure email - Silvertrees web development",
+        "See how easy invoices will help you and your clients without spending a cent."
+      ]
+    },
+    {
+      "slug": "the-business-expo",
+      "title": "Making online business Simpler",
+      "paras": [
+        "Making life easier not harder",
+        "Welcome to the Central Coast Online Business Expo. On display are over 200 of the very best Central Coast businesses across a wide variety of categories. No matter what you are looking for, the Central Coast Business Expo has something for you.",
+        "Copyright 2026 Silvertrees - Contact us - Terms & Conditions - Secure email - Silvertrees web development",
+        "See how easy invoices will help you and your clients without spending a cent."
+      ]
+    }
+  ]
+}
