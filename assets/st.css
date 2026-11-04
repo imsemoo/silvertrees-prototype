@@ -781,3 +781,88 @@ body.li-open { overflow: hidden; }
   .li-alt { display: none; }
   .li-row { margin-block-start: -10px; }
 }
+
+/* ---------- administrator log in ----------
+   the familiar CMS card, centred on mist; growth rings spread from behind it and light up in sky,
+   one per password character; the mark assembles on arrival; a wrong password shakes the card */
+body.ad { min-block-size: 100dvh; margin: 0; background: var(--mist); overflow-x: hidden; }
+.ad-rings { position: fixed; left: 50%; top: 50%; inline-size: max(150vmax, 1500px); max-width: none; block-size: auto; aspect-ratio: 1; translate: -50% -50%; pointer-events: none; z-index: 0; }
+.ad-rings circle { fill: none; stroke: #c9cdd170; stroke-width: 1; stroke-dasharray: 1; transform-box: fill-box; transform-origin: center; transform: scale(.985); transition: stroke .45s, transform .6s var(--grow); }
+.ad-rings circle.on { stroke: #02a3fd52; transform: none; }
+.ad-main { position: relative; z-index: 1; min-block-size: 100dvh; display: grid; place-content: center; justify-items: center; gap: clamp(8px, 1.6vh, 18px); padding: clamp(16px, 3vh, 40px) var(--gut); }
+.ad-card { --n: 20px; inline-size: min(400px, 100vw - 2 * var(--gut)); }
+.ad-card > .notch-in { background: var(--paper); padding: clamp(24px, 3.6vh, 36px) 32px clamp(22px, 3.2vh, 30px); box-shadow: 0 0 0 1px #0000000d, 0 30px 60px -32px #23222047; }
+.ad-card::after { box-shadow: 0 0 0 0 #02a3fd55; }
+
+.ad-brand { display: grid; justify-items: center; gap: 10px; text-decoration: none; }
+.ad-mark { inline-size: 56px; block-size: 56px; overflow: visible; }
+.ad-mark .g, .ad-mark .b, .ad-mark .s1, .ad-mark .s2 { transform-box: fill-box; transform-origin: center; }
+.ad-brand .lock b { font-size: 24px; }
+.ad-brand .lock small { font-size: 9px; }
+.ad-h { margin: clamp(16px, 2.4vh, 24px) 0 0; padding-block-start: clamp(14px, 2.2vh, 20px); border-block-start: 1px solid var(--silver-2); text-align: center; font: 700 24px/1.15 var(--f); letter-spacing: -.02em; text-transform: lowercase; }
+.ad-site { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 10px auto 0; inline-size: fit-content; padding: 6px 12px 6px 10px; background: var(--mist); font: 500 12.5px/1 var(--mono); color: var(--ink); }
+.ad-site span:last-child { color: var(--ink-2); margin-inline-start: -8px; }
+.ad-site .seed { color: var(--sky); font-size: 12px; }
+
+.ad-form { display: grid; gap: clamp(12px, 2vh, 18px); margin-block-start: clamp(16px, 2.8vh, 24px); }
+.ad-form .field { gap: 7px; }
+.ad-form .field label { font-size: 14px; }
+.ad-form .field input { border: 1.5px solid var(--silver); border-radius: 3px; padding: 11px 13px; font-size: 16px; background: var(--paper); transition: border-color .2s, box-shadow .25s; }
+.ad-form .field input:hover { border-color: #aeb3b8; }
+.ad-form .field input:focus { border-color: var(--sky-ink); box-shadow: 0 0 0 3px #02a3fd2e; }
+.ad-form .field input[aria-invalid="true"] { border-color: var(--hat-deep); box-shadow: 0 0 0 3px #feb91633; }
+.ad-in { position: relative; }
+.ad-in input { padding-inline-end: 46px; }
+.ad-eye { position: absolute; inset-inline-end: 1px; top: 50%; translate: 0 -50%; inline-size: 44px; block-size: 44px; border: 0; background: none; padding: 0; display: grid; place-items: center; color: var(--ink-2); font-size: 19px; cursor: pointer; }
+.ad-eye .seed { transition: background-color .2s, transform .35s var(--grow); }
+.ad-eye:hover .seed { transform: scale(1.15); }
+.ad-eye[aria-pressed="true"] { color: var(--sky-ink); }
+.ad-eye[aria-pressed="true"] .seed { background: currentColor; }
+.ad-caps { display: flex; gap: 8px; align-items: center; }
+.ad-caps[hidden] { display: none; }
+.ad-caps::before { content: ""; inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--hat); }
+.ad-err { margin: 0; display: flex; gap: 10px; align-items: baseline; padding: 11px 13px; background: #feb9161f; border-inline-start: 3px solid var(--hat); font-size: 14.5px; line-height: 1.45; }
+.ad-err[hidden] { display: none; }
+.ad-err .seed { flex: none; font-size: 12px; }
+.ad-row { display: flex; align-items: center; margin-block: -8px -4px; font-size: 15px; }
+.ad-go { inline-size: 100%; justify-content: center; }
+.ad-go.busy { cursor: progress; color: var(--ink); }
+.ad-go.busy::before { transform: scale(60); transition-duration: .9s; }
+
+.ad-lab { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.ad-lost { font-size: 13.5px; color: var(--sky-ink); text-decoration: none; padding-block: 12px; margin-block: -12px; }
+.ad-lost:hover { text-decoration: underline; }
+.ad-arr { display: inline-block; margin-inline-start: 2px; transition: translate .35s var(--ease); }
+@media (hover: hover) { .ad-go:hover .ad-arr { translate: 4px 0; } }
+.ad-foot { inline-size: min(400px, 100vw - 2 * var(--gut)); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+.ad-foot a { color: var(--ink-2); text-decoration: none; padding-block: 12px; }
+.ad-foot a:hover { color: var(--ink); text-decoration: underline; }
+.ad-secure { display: inline-flex; align-items: center; gap: 8px; margin: 0; font: 500 12.5px/1 var(--mono); color: var(--ink-2); }
+.ad-secure svg { inline-size: 14px; block-size: 14px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+
+/* wrong password: the shake every WordPress user knows */
+.ad-card.shake { animation: ad-shake .5s cubic-bezier(.36, .07, .19, .97); }
+@keyframes ad-shake { 15%, 85% { translate: -2px 0; } 30%, 70% { translate: 6px 0; } 45%, 55% { translate: -9px 0; } }
+
+/* arrival: rings draw outward, the card rises, the mark assembles seed by disc */
+.ad-enter .ad-rings circle { animation: li-draw 1.6s calc(var(--i) * 60ms) var(--ease) both; }
+.ad-enter .ad-card { animation: li-rise .9s .1s var(--ease) both; }
+.ad-enter .ad-foot { animation: li-fade .8s .7s both; }
+.ad-enter .ad-mark .s2 { animation: pop .45s .35s var(--grow) both; }
+.ad-enter .ad-mark .b { animation: pop .6s .5s var(--grow) both; }
+.ad-enter .ad-mark .g { animation: pop .65s .72s var(--grow) both; }
+.ad-enter .ad-mark .s1 { animation: pop .4s 1s var(--grow) both; }
+.ad-enter .ad-card::after { animation: pop .5s 1.1s var(--grow) both; }
+
+/* success: every ring lights, the card's seed pulses, the card lifts away */
+.ad-ok .ad-rings circle { stroke: #02a3fd52; transform: none; transition-delay: calc(var(--i) * 35ms); }
+.ad-ok .ad-card::after { animation: ad-ping 1s var(--ease) infinite; }
+@keyframes ad-ping { to { box-shadow: 0 0 0 14px #02a3fd00; } from { box-shadow: 0 0 0 0 #02a3fd73; } }
+.ad-out .ad-card, .ad-out .ad-foot { opacity: 0; translate: 0 -14px; transition: opacity .45s, translate .6s var(--ease); }
+.ad-out .ad-rings { opacity: 0; scale: 1.06; transition: opacity .6s .1s, scale .9s var(--ease); }
+
+@media (max-width: 480px) {
+  .ad-main { place-content: start center; padding-block: 28px; }
+  .ad-card > .notch-in { padding: 30px 22px 26px; }
+  .ad-card { --n: 18px; }
+}

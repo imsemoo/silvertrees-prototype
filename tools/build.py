@@ -10,7 +10,7 @@ from content import (APP_SHOT, COMPANY, COMPARE, FIX_FEATURES, GROUPS, HOSTING, 
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "research"
-V = 13
+V = 14
 BASE404 = "/silvertrees-prototype/"
 YEAR = 2026
 
@@ -733,8 +733,8 @@ def login():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Administrator sign in — Silvertrees</title>
-<meta name="description" content="Administrator sign in: manage your Silvertrees website from its dashboard.">
+<title>Sign in — Silvertrees</title>
+<meta name="description" content="Sign in to your Silvertrees client dashboard: your sites, tools and invoices in one place.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#1f1e1d">
 <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
@@ -756,7 +756,7 @@ def login():
   </div>
   <div class="li-copy">
     <div>
-      <p class="tag on-dark">site administration</p>
+      <p class="tag on-dark">client dashboard</p>
       <p class="d3">making online business <em>simpler.</em></p>
       <p class="li-live"><span class="seed live"></span><span class="li-live-l">our work</span><span class="li-live-n" data-clients="{esc(json.dumps(clients))}">{esc(clients[0])}</span></p>
     </div>
@@ -767,9 +767,9 @@ def login():
 <main class="li-pane" id="main">
   <div class="li-box">
     <div class="li-signin">
-      <p class="tag"><span class="seed" style="color:var(--sky)"></span> administrator sign in</p>
+      <p class="tag"><span class="seed" style="color:var(--sky)"></span> client sign in</p>
       <h1 class="d2" data-title>welcome <em>back.</em></h1>
-      <p class="lede">Sign in with your administrator email to manage your site.</p>
+      <p class="lede">Your sites, tools and invoices, in one place.</p>
 
       <div class="li-who" hidden>
         <span class="li-av" aria-hidden="true" data-who-i></span>
@@ -834,10 +834,86 @@ def login():
     PAGES.append("login.html")
 
 
+def admin():
+    """Administrator log in. The shape every CMS user already knows (one centred card, logo on top,
+    two fields, one button, 'lost your password?' and 'back to site' underneath), said in the brand's
+    language: the mark assembles itself, growth rings spread behind the card and light up per
+    password character, the card carries the seed notch, and a wrong password shakes it like
+    WordPress does. DASHBOARD is where a successful log in goes."""
+    DASHBOARD = "home.html"
+    radii = [150, 182, 214, 252, 284, 322, 356, 396, 432, 474, 520, 560, 612, 660, 716, 770]
+    ring_svg = ('<svg class="ad-rings" viewBox="0 0 1600 1600" aria-hidden="true">'
+                + "".join(f'<circle cx="800" cy="800" r="{r}" pathLength="1" style="--i:{i}"/>' for i, r in enumerate(radii))
+                + "</svg>")
+    full = f'''<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administrator log in — Silvertrees</title>
+<meta name="description" content="Administrator log in: manage your Silvertrees website.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f2f3f4">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/st.css?v={V}">
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ad-enter');</script>
+</head>
+<body class="ad">
+<a class="skip" href="#main">Skip to content</a>
+{ring_svg}
+<main class="ad-main" id="main">
+  <div class="ad-card notch sky">
+    <div class="notch-in">
+      <a class="ad-brand" href="home.html" aria-label="Silvertrees web development, home">
+        {mark_svg("ad-mark", "ad")}
+        <span class="lock"><b>silvertrees</b><small>web development</small></span>
+      </a>
+      <h1 class="ad-h">administrator log in</h1>
+      <p class="ad-site"><span class="seed live"></span>silvertrees.net<span>/admin</span></p>
+
+      <form class="ad-form" id="adlogin" action="#" method="post" novalidate data-next="{DASHBOARD}">
+        <div class="field">
+          <label for="ad-user">username or email</label>
+          <input id="ad-user" name="log" type="text" autocomplete="username" spellcheck="false" autocapitalize="off" required aria-describedby="ad-err">
+        </div>
+        <div class="field">
+          <div class="ad-lab"><label for="ad-pw">password</label><a class="ad-lost" href="mailto:{COMPANY["support"]}?subject=Password%20reset">lost your password?</a></div>
+          <div class="ad-in">
+            <input id="ad-pw" name="pwd" type="password" autocomplete="current-password" required aria-describedby="ad-err ad-caps">
+            <button class="ad-eye" type="button" aria-pressed="false" aria-label="Show password"><span class="seed"></span></button>
+          </div>
+          <p class="hint ad-caps" id="ad-caps" hidden>caps lock is on</p>
+        </div>
+        <p class="ad-err" id="ad-err" role="alert" hidden><span class="seed hat"></span><span class="ad-err-t"></span></p>
+        <div class="ad-row">
+          <label class="li-check"><input type="checkbox" name="rememberme"> <span>remember me</span></label>
+        </div>
+        <button class="btn ad-go" type="submit"><span class="ad-go-t">log in</span><span class="ad-arr" aria-hidden="true">→</span></button>
+        <p class="vh" role="status" aria-live="polite" data-status></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="ad-foot">
+    <a href="home.html"><span aria-hidden="true">←</span> back to silvertrees</a>
+    <p class="ad-secure"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>secured connection</p>
+  </div>
+</main>
+
+<script src="assets/admin.js?v={V}" defer></script>
+</body>
+</html>
+'''
+    (ROOT / "admin.html").write_text(full, encoding="utf-8")
+    PAGES.append("admin.html")
+
+
 def main():
     photos()
     home()
     login()
+    admin()
     work_index()
     for i, w in enumerate(SITES):
         case(w, i, SITES, "work", "work", "Work")
