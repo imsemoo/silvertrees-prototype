@@ -761,3 +761,23 @@ body.li-open { overflow: hidden; }
   .li-mark .s2, .li-mark .plan, .li-mark .plan circle { animation: none; }
   .li-fig .li-rings, .li-fig .li-mark { transform: none; }
 }
+
+/* desktop: the sign-in is one screen, never a scrolling page. spacing follows the screen height;
+   the pane scrolls inside itself only as a last resort on very short windows */
+@media (min-width: 901px) {
+  body.li { block-size: 100dvh; overflow: hidden; }
+  .li-stage, .li-pane { min-block-size: 0; }
+  .li-pane { overflow-y: auto; padding-block: clamp(16px, 3.5vh, 48px) 14px; }
+  .li-box .d2 { margin-block-start: clamp(10px, 1.8vh, 18px); font-size: clamp(36px, min(4.2vw, 7vh), 60px); }
+  .li-box .lede { margin-block-start: clamp(8px, 1.4vh, 14px); }
+  .li-who { margin-block-start: clamp(14px, 2.6vh, 28px); }
+  .li-form { gap: clamp(12px, 2.3vh, 22px); margin-block-start: clamp(16px, 3.4vh, 32px); }
+  .li-alt { margin-block-start: clamp(12px, 3vh, 36px); }
+  .li-foot { padding-block-start: clamp(8px, 2vh, 32px); }
+  /* a remembered admin is already named in the heading and the account row */
+  .li-signin:has(.li-who:not([hidden])) .lede { display: none; }
+}
+@media (min-width: 901px) and (max-height: 720px) {
+  .li-alt { display: none; }
+  .li-row { margin-block-start: -10px; }
+}

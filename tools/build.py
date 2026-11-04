@@ -10,7 +10,7 @@ from content import (APP_SHOT, COMPANY, COMPARE, FIX_FEATURES, GROUPS, HOSTING, 
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "research"
-V = 12
+V = 13
 BASE404 = "/silvertrees-prototype/"
 YEAR = 2026
 
