@@ -10,7 +10,7 @@ from content import (APP_SHOT, COMPANY, COMPARE, FIX_FEATURES, GROUPS, HOSTING, 
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "research"
-V = 10
+V = 11
 BASE404 = "/silvertrees-prototype/"
 YEAR = 2026
 
@@ -181,6 +181,7 @@ def footer(R):
       <div><h4>work</h4><ul>{sectors}</ul></div>
       <div><h4>products</h4><ul>{tools}</ul></div>
       <div><h4>clients</h4><ul>
+        <li><a href="{R}login.html">Client sign in</a></li>
         <li><a href="{COMPANY["webmail"]}">Webmail</a></li>
         <li><a href="{COMPANY["mailadmin"]}">Mail admin</a></li>
         <li><a href="mailto:{COMPANY["support"]}">Technical support</a></li>
@@ -707,9 +708,101 @@ def not_found():
     page("404.html", "Not found — Silvertrees", "This page does not exist.", body, R=R)
 
 
+def login():
+    """Client sign-in. No site header or footer: the night stage on the left is the mark drawn as a plan
+    (dashed rings = planned) that fills in as the form is completed (disc = launched), then the blue disc
+    opens over the page and the dashboard loads. DASHBOARD is where a successful sign-in goes."""
+    DASHBOARD = "home.html"
+    masks = '''<defs>
+<mask id="lig" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect width="240" height="240" fill="#fff"/><circle cx="88" cy="152" r="74"/><circle cx="188.9" cy="41.8" r="27"/></mask>
+<mask id="lib" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect width="240" height="240" fill="#fff"/><circle cx="48.1" cy="199.5" r="25"/></mask></defs>'''
+    mark = f'''<svg class="li-mark" viewBox="0 0 240 240" aria-hidden="true">{masks}
+<g class="plan" mask="url(#lig)"><circle cx="140" cy="100" r="80"/></g><circle class="plan" cx="188.9" cy="41.8" r="17"/>
+<g class="plan" mask="url(#lib)"><circle cx="88" cy="152" r="66"/></g><circle class="plan" cx="48.1" cy="199.5" r="15"/>
+<g mask="url(#lig)"><circle class="g" cx="140" cy="100" r="80" fill="#8F8D88"/></g><circle class="s1" cx="188.9" cy="41.8" r="17" fill="#8F8D88"/>
+<g mask="url(#lib)"><circle class="b" cx="88" cy="152" r="66" fill="#02A3FD"/></g><circle class="s2" cx="48.1" cy="199.5" r="15" fill="#02A3FD"/>
+<circle class="burst" cx="88" cy="152" r="66" fill="#02A3FD"/></svg>'''
+    ring_svg = rings(500, 500, [130, 160, 196, 224, 264, 290, 332, 360, 400, 428, 462, 490], "li-rings")
+    full = f'''<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in — Silvertrees</title>
+<meta name="description" content="Sign in to your Silvertrees client dashboard: your sites, tools and invoices in one place.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1f1e1d">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/st.css?v={V}">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="li">
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="li-stage dark" aria-label="Silvertrees">
+  <a class="brand" href="home.html" aria-label="Silvertrees web development, home">
+    <img src="assets/brand/mark-night.svg" width="40" height="40" alt="">
+    <span><b>silvertrees</b><small>web development</small></span>
+  </a>
+  <div class="li-fig" data-stage>
+    {ring_svg}
+    {mark}
+  </div>
+  <div class="li-copy">
+    <div>
+      <p class="tag on-dark">client dashboard</p>
+      <p class="d3" style="margin-top:14px">making online business <em>simpler.</em></p>
+    </div>
+    <p class="li-clock num" aria-label="Time in Sydney">sydney · <time data-clock>--:--</time></p>
+  </div>
+</aside>
+
+<main class="li-pane" id="main">
+  <div class="li-box">
+    <p class="tag"><span class="seed" style="color:var(--sky)"></span> client sign in</p>
+    <h1 class="d2">welcome <em>back.</em></h1>
+    <p class="lede">Your sites, tools and invoices, in one place.</p>
+
+    <form class="li-form" id="login" action="#" method="post" novalidate data-next="{DASHBOARD}">
+      <div class="field">
+        <label for="email">email</label>
+        <input id="email" name="email" type="email" autocomplete="username" inputmode="email" spellcheck="false" autocapitalize="off" required>
+      </div>
+      <div class="field">
+        <label for="pw">password</label>
+        <div class="li-in">
+          <input id="pw" name="password" type="password" autocomplete="current-password" required>
+          <button class="li-eye" type="button" aria-pressed="false" aria-label="Show password"><span class="seed"></span></button>
+        </div>
+        <p class="hint li-caps" hidden>caps lock is on</p>
+      </div>
+      <div class="li-row">
+        <label class="li-check"><input type="checkbox" name="remember"> <span>keep me signed in</span></label>
+        <a class="li-forgot" href="mailto:{COMPANY["support"]}?subject=Password%20reset">forgot password?</a>
+      </div>
+      <p class="li-err" role="alert" hidden><span class="seed hat"></span><span class="li-err-t"></span></p>
+      <button class="btn li-go" type="submit"><span class="li-go-t">open the dashboard</span></button>
+      <p class="vh" role="status" aria-live="polite" data-status></p>
+    </form>
+
+    <p class="li-alt">new to silvertrees? <a class="more" href="contact.html#start">start a project <span class="seed"></span></a></p>
+  </div>
+  <footer class="li-foot"><span>© {YEAR} {COMPANY["name"]}</span><a href="mailto:{COMPANY["support"]}">trouble signing in?</a></footer>
+</main>
+
+<script src="assets/login.js?v={V}" defer></script>
+</body>
+</html>
+'''
+    (ROOT / "login.html").write_text(full, encoding="utf-8")
+    PAGES.append("login.html")
+
+
 def main():
     photos()
     home()
+    login()
     work_index()
     for i, w in enumerate(SITES):
         case(w, i, SITES, "work", "work", "Work")

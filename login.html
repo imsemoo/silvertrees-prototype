@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in — Silvertrees</title>
+<meta name="description" content="Sign in to your Silvertrees client dashboard: your sites, tools and invoices in one place.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1f1e1d">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/st.css?v=11">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="li">
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="li-stage dark" aria-label="Silvertrees">
+  <a class="brand" href="home.html" aria-label="Silvertrees web development, home">
+    <img src="assets/brand/mark-night.svg" width="40" height="40" alt="">
+    <span><b>silvertrees</b><small>web development</small></span>
+  </a>
+  <div class="li-fig" data-stage>
+    <svg class="li-rings" viewBox="0 0 1000 1000" aria-hidden="true" style=""><circle cx="500" cy="500" r="130"/><circle cx="500" cy="500" r="160"/><circle cx="500" cy="500" r="196"/><circle cx="500" cy="500" r="224"/><circle cx="500" cy="500" r="264"/><circle cx="500" cy="500" r="290"/><circle cx="500" cy="500" r="332"/><circle cx="500" cy="500" r="360"/><circle cx="500" cy="500" r="400"/><circle cx="500" cy="500" r="428"/><circle cx="500" cy="500" r="462"/><circle cx="500" cy="500" r="490"/></svg>
+    <svg class="li-mark" viewBox="0 0 240 240" aria-hidden="true"><defs>
+<mask id="lig" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect width="240" height="240" fill="#fff"/><circle cx="88" cy="152" r="74"/><circle cx="188.9" cy="41.8" r="27"/></mask>
+<mask id="lib" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect width="240" height="240" fill="#fff"/><circle cx="48.1" cy="199.5" r="25"/></mask></defs>
+<g class="plan" mask="url(#lig)"><circle cx="140" cy="100" r="80"/></g><circle class="plan" cx="188.9" cy="41.8" r="17"/>
+<g class="plan" mask="url(#lib)"><circle cx="88" cy="152" r="66"/></g><circle class="plan" cx="48.1" cy="199.5" r="15"/>
+<g mask="url(#lig)"><circle class="g" cx="140" cy="100" r="80" fill="#8F8D88"/></g><circle class="s1" cx="188.9" cy="41.8" r="17" fill="#8F8D88"/>
+<g mask="url(#lib)"><circle class="b" cx="88" cy="152" r="66" fill="#02A3FD"/></g><circle class="s2" cx="48.1" cy="199.5" r="15" fill="#02A3FD"/>
+<circle class="burst" cx="88" cy="152" r="66" fill="#02A3FD"/></svg>
+  </div>
+  <div class="li-copy">
+    <div>
+      <p class="tag on-dark">client dashboard</p>
+      <p class="d3" style="margin-top:14px">making online business <em>simpler.</em></p>
+    </div>
+    <p class="li-clock num" aria-label="Time in Sydney">sydney · <time data-clock>--:--</time></p>
+  </div>
+</aside>
+
+<main class="li-pane" id="main">
+  <div class="li-box">
+    <p class="tag"><span class="seed" style="color:var(--sky)"></span> client sign in</p>
+    <h1 class="d2">welcome <em>back.</em></h1>
+    <p class="lede">Your sites, tools and invoices, in one place.</p>
+
+    <form class="li-form" id="login" action="#" method="post" novalidate data-next="home.html">
+      <div class="field">
+        <label for="email">email</label>
+        <input id="email" name="email" type="email" autocomplete="username" inputmode="email" spellcheck="false" autocapitalize="off" required>
+      </div>
+      <div class="field">
+        <label for="pw">password</label>
+        <div class="li-in">
+          <input id="pw" name="password" type="password" autocomplete="current-password" required>
+          <button class="li-eye" type="button" aria-pressed="false" aria-label="Show password"><span class="seed"></span></button>
+        </div>
+        <p class="hint li-caps" hidden>caps lock is on</p>
+      </div>
+      <div class="li-row">
+        <label class="li-check"><input type="checkbox" name="remember"> <span>keep me signed in</span></label>
+        <a class="li-forgot" href="mailto:helpdesk@thesitefactory.com.au?subject=Password%20reset">forgot password?</a>
+      </div>
+      <p class="li-err" role="alert" hidden><span class="seed hat"></span><span class="li-err-t"></span></p>
+      <button class="btn li-go" type="submit"><span class="li-go-t">open the dashboard</span></button>
+      <p class="vh" role="status" aria-live="polite" data-status></p>
+    </form>
+
+    <p class="li-alt">new to silvertrees? <a class="more" href="contact.html#start">start a project <span class="seed"></span></a></p>
+  </div>
+  <footer class="li-foot"><span>© 2026 Silvertrees Web Development Pty Ltd</span><a href="mailto:helpdesk@thesitefactory.com.au">trouble signing in?</a></footer>
+</main>
+
+<script src="assets/login.js?v=11" defer></script>
+</body>
+</html>

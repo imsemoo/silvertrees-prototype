@@ -600,3 +600,86 @@ section[aria-labelledby^="g"] { scroll-margin-top: 76px; }
 
 .pp[hidden] { display: none; }
 @media (max-width: 640px) { .head { grid-template-columns: minmax(0, 1fr); } .head .more { justify-self: start; } }
+
+/* ---------- client sign in ----------
+   the stage draws the mark as a plan (dashed = planned); it fills in as the form is completed
+   (filled = launched): email → blue disc, password → graphite disc, sign in → the last seed,
+   then the blue disc opens over the page and the dashboard loads */
+body.li { min-block-size: 100dvh; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.li-stage { position: relative; overflow: hidden; background: var(--night); color: #f3f2ef; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 24px; padding: clamp(20px, 3vw, 40px) clamp(20px, 4vw, 56px); }
+.li-stage .brand { margin: 0; justify-self: start; }
+.li-stage .brand b { color: #fff; }
+.li-fig { position: relative; place-self: center; inline-size: min(72%, 520px, 58vh); aspect-ratio: 1; }
+.li-fig svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; overflow: visible; }
+.li-fig .li-rings { inset: -45%; inline-size: 190%; max-width: none; block-size: 190%; translate: -2.5% 2.5%; }
+.li-rings circle { fill: none; stroke: #ffffff10; stroke-width: 1; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; transform: scale(.97); transition: stroke .5s, transform .6s var(--grow); }
+.li-rings circle.on { stroke: #ffffff59; transform: none; }
+.li-mark .plan, .li-mark .plan circle { fill: none; stroke: #ffffff40; stroke-width: 1.2; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+.li-mark .g, .li-mark .b, .li-mark .s1, .li-mark .s2, .li-mark .burst { transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform .75s var(--grow); }
+.li-mark .s2 { transform: none; animation: li-breathe 3.2s ease-in-out infinite; }
+.li-fig.st-mail .b { transform: none; }
+.li-fig.st-mail .s2 { animation: none; }
+.li-fig.st-pass .g { transform: none; }
+.li-fig.st-go .s1 { transform: none; }
+.li-fig.st-open .burst { transform: scale(22); transition: transform 1s var(--ease); }
+.li-fig.st-open .li-rings, .li-fig.st-open .plan, .li-fig.st-open .g, .li-fig.st-open .s1, .li-fig.st-open .s2 { opacity: 0; transition: opacity .4s; }
+@keyframes li-breathe { 50% { transform: scale(1.22); } }
+.li-copy { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.li-copy .d3 { color: #fff; max-width: 15ch; }
+.li-copy .d3 em { color: var(--sky-night); }
+.li-clock { color: #8d8b86; letter-spacing: .05em; white-space: nowrap; margin: 0; }
+
+.li-pane { display: grid; grid-template-rows: minmax(0, 1fr) auto; padding: clamp(24px, 4vw, 56px) var(--gut) 24px; }
+.li-box { place-self: center; inline-size: 100%; max-inline-size: 420px; }
+.li-box .d2 { margin-block-start: 18px; font-size: clamp(38px, 4.2vw, 60px); }
+.li-box .lede { margin-block-start: 14px; font-size: 17px; }
+.li-form { display: grid; gap: 24px; margin-block-start: 40px; }
+.li-in { position: relative; }
+.li-in input { padding-inline-end: 48px; }
+.li-eye { position: absolute; inset-inline-end: 0; top: 50%; translate: 0 -50%; inline-size: 44px; block-size: 44px; border: 0; background: none; padding: 0; display: grid; place-items: center; color: var(--ink-2); font-size: 20px; cursor: pointer; }
+.li-eye .seed { transition: background-color .2s, transform .35s var(--grow); }
+.li-eye:hover .seed { transform: scale(1.15); }
+.li-eye[aria-pressed="true"] { color: var(--sky-ink); }
+.li-eye[aria-pressed="true"] .seed { background: currentColor; }
+.li-caps { display: flex; gap: 8px; align-items: center; }
+.li-caps[hidden] { display: none; }
+.li-caps::before { content: ""; inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--hat); }
+.li-row { display: flex; justify-content: space-between; align-items: center; gap: 8px 20px; flex-wrap: wrap; font-size: 15px; margin-block-start: -6px; }
+.li-check { display: inline-flex; gap: 10px; align-items: center; min-block-size: 44px; cursor: pointer; }
+.li-check input { appearance: none; inline-size: 16px; block-size: 16px; border-radius: 50%; border: 2px solid var(--ink-2); margin: 0; transition: background-color .2s, border-color .2s, box-shadow .25s var(--grow); }
+.li-check input:checked { background: var(--sky); border-color: var(--sky); box-shadow: 0 0 0 3px var(--paper), 0 0 0 4.5px var(--sky); }
+.li-forgot { color: var(--ink-2); padding-block: 10px; }
+.li-forgot:hover { color: var(--ink); }
+.li-err { margin: -6px 0 0; display: flex; gap: 10px; align-items: baseline; font-size: 15px; color: var(--ink); max-width: 44ch; }
+.li-err[hidden] { display: none; }
+.li-err .seed { flex: none; font-size: 13px; }
+.field input[aria-invalid="true"] { border-color: var(--hat-deep); box-shadow: 0 1.5px 0 var(--hat-deep); }
+.li-go { justify-self: start; min-inline-size: 236px; }
+.li-go[disabled] { cursor: progress; }
+.li-alt { margin: 36px 0 0; color: var(--ink-2); font-size: 15.5px; display: flex; gap: 6px 10px; flex-wrap: wrap; align-items: baseline; }
+.li-alt .more { color: var(--ink); padding-block: 10px; }
+.li-alt .more .seed { color: var(--sky); }
+.li-foot { display: flex; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; inline-size: 100%; max-inline-size: 420px; margin-inline: auto; padding-block-start: 32px; font-size: 13.5px; color: var(--ink-2); }
+.li-foot a { text-decoration: none; padding-block: 11px; }
+.li-foot a:hover { color: var(--ink); text-decoration: underline; }
+
+/* opening: the blue disc covers the page while the dashboard loads */
+body.li-open { overflow: hidden; }
+.li-open .li-stage { overflow: visible; z-index: 5; }
+.li-open .li-box, .li-open .li-foot, .li-open .li-copy, .li-open .li-stage .brand { opacity: 0; transition: opacity .5s; }
+
+@media (max-width: 900px) {
+  body.li { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .li-stage { grid-template-rows: auto; grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: 14px var(--gut); gap: 16px; }
+  .li-fig { inline-size: 92px; place-self: center end; }
+  .li-fig .li-rings circle:nth-child(n+7) { display: none; }
+  .li-copy { display: none; }
+  .li-pane { padding-block: 36px 20px; }
+  .li-box .d2 { font-size: clamp(36px, 10vw, 44px); }
+  .li-form { margin-block-start: 32px; }
+  .li-go { justify-self: stretch; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .li-mark .s2 { animation: none; }
+  .li-fig.st-open .burst { transform: scale(22); }
+}
