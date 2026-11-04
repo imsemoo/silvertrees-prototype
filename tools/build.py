@@ -10,7 +10,7 @@ from content import (APP_SHOT, COMPANY, COMPARE, FIX_FEATURES, GROUPS, HOSTING, 
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "research"
-V = 11
+V = 12
 BASE404 = "/silvertrees-prototype/"
 YEAR = 2026
 
@@ -711,7 +711,8 @@ def not_found():
 def login():
     """Client sign-in. No site header or footer: the night stage on the left is the mark drawn as a plan
     (dashed rings = planned) that fills in as the form is completed (disc = launched), then the blue disc
-    opens over the page and the dashboard loads. DASHBOARD is where a successful sign-in goes."""
+    opens over the page, greets the client and the dashboard loads. DASHBOARD is where a successful
+    sign-in goes. Two ways in: password, or a one-time link by email."""
     DASHBOARD = "home.html"
     masks = '''<defs>
 <mask id="lig" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect width="240" height="240" fill="#fff"/><circle cx="88" cy="152" r="74"/><circle cx="188.9" cy="41.8" r="27"/></mask>
@@ -722,20 +723,24 @@ def login():
 <g mask="url(#lig)"><circle class="g" cx="140" cy="100" r="80" fill="#8F8D88"/></g><circle class="s1" cx="188.9" cy="41.8" r="17" fill="#8F8D88"/>
 <g mask="url(#lib)"><circle class="b" cx="88" cy="152" r="66" fill="#02A3FD"/></g><circle class="s2" cx="48.1" cy="199.5" r="15" fill="#02A3FD"/>
 <circle class="burst" cx="88" cy="152" r="66" fill="#02A3FD"/></svg>'''
-    ring_svg = rings(500, 500, [130, 160, 196, 224, 264, 290, 332, 360, 400, 428, 462, 490], "li-rings")
+    radii = [130, 160, 196, 224, 264, 290, 332, 360, 400, 428, 462, 490]
+    ring_svg = ('<svg class="li-rings" viewBox="0 0 1000 1000" aria-hidden="true">'
+                + "".join(f'<circle cx="500" cy="500" r="{r}" pathLength="1" style="--i:{i}"/>' for i, r in enumerate(radii))
+                + "</svg>")
+    clients = [s["title"] for s in SITES][:12]
     full = f'''<!doctype html>
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sign in — Silvertrees</title>
-<meta name="description" content="Sign in to your Silvertrees client dashboard: your sites, tools and invoices in one place.">
+<title>Administrator sign in — Silvertrees</title>
+<meta name="description" content="Administrator sign in: manage your Silvertrees website from its dashboard.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#1f1e1d">
 <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/st.css?v={V}">
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('li-enter');</script>
 </head>
 <body class="li">
 <a class="skip" href="#main">Skip to content</a>
@@ -751,45 +756,75 @@ def login():
   </div>
   <div class="li-copy">
     <div>
-      <p class="tag on-dark">client dashboard</p>
-      <p class="d3" style="margin-top:14px">making online business <em>simpler.</em></p>
+      <p class="tag on-dark">site administration</p>
+      <p class="d3">making online business <em>simpler.</em></p>
+      <p class="li-live"><span class="seed live"></span><span class="li-live-l">our work</span><span class="li-live-n" data-clients="{esc(json.dumps(clients))}">{esc(clients[0])}</span></p>
     </div>
-    <p class="li-clock num" aria-label="Time in Sydney">sydney · <time data-clock>--:--</time></p>
+    <p class="li-clock num">sydney · <time data-clock>--:--</time></p>
   </div>
 </aside>
 
 <main class="li-pane" id="main">
   <div class="li-box">
-    <p class="tag"><span class="seed" style="color:var(--sky)"></span> client sign in</p>
-    <h1 class="d2">welcome <em>back.</em></h1>
-    <p class="lede">Your sites, tools and invoices, in one place.</p>
+    <div class="li-signin">
+      <p class="tag"><span class="seed" style="color:var(--sky)"></span> administrator sign in</p>
+      <h1 class="d2" data-title>welcome <em>back.</em></h1>
+      <p class="lede">Sign in with your administrator email to manage your site.</p>
 
-    <form class="li-form" id="login" action="#" method="post" novalidate data-next="{DASHBOARD}">
-      <div class="field">
-        <label for="email">email</label>
-        <input id="email" name="email" type="email" autocomplete="username" inputmode="email" spellcheck="false" autocapitalize="off" required>
+      <div class="li-who" hidden>
+        <span class="li-av" aria-hidden="true" data-who-i></span>
+        <span class="li-who-t"><b data-who-n></b><small data-who-m></small></span>
+        <button class="li-notyou" type="button">not you?</button>
       </div>
-      <div class="field">
-        <label for="pw">password</label>
-        <div class="li-in">
-          <input id="pw" name="password" type="password" autocomplete="current-password" required>
-          <button class="li-eye" type="button" aria-pressed="false" aria-label="Show password"><span class="seed"></span></button>
+
+      <form class="li-form" id="login" action="#" method="post" novalidate data-next="{DASHBOARD}">
+        <fieldset class="li-mode">
+          <legend class="vh">how would you like to sign in?</legend>
+          <label><input type="radio" name="mode" value="password" checked><span>password</span></label>
+          <label><input type="radio" name="mode" value="link"><span>email me a link</span></label>
+        </fieldset>
+        <div class="field li-mail">
+          <label for="email">email</label>
+          <div class="li-in">
+            <input id="email" name="email" type="email" autocomplete="username" inputmode="email" spellcheck="false" autocapitalize="off" required aria-describedby="err">
+            <span class="li-ok" aria-hidden="true"></span>
+          </div>
         </div>
-        <p class="hint li-caps" hidden>caps lock is on</p>
-      </div>
-      <div class="li-row">
-        <label class="li-check"><input type="checkbox" name="remember"> <span>keep me signed in</span></label>
-        <a class="li-forgot" href="mailto:{COMPANY["support"]}?subject=Password%20reset">forgot password?</a>
-      </div>
-      <p class="li-err" role="alert" hidden><span class="seed hat"></span><span class="li-err-t"></span></p>
-      <button class="btn li-go" type="submit"><span class="li-go-t">open the dashboard</span></button>
-      <p class="vh" role="status" aria-live="polite" data-status></p>
-    </form>
+        <div class="field li-pw">
+          <label for="pw">password</label>
+          <div class="li-in">
+            <input id="pw" name="password" type="password" autocomplete="current-password" required aria-describedby="err caps">
+            <button class="li-eye" type="button" aria-pressed="false" aria-label="Show password"><span class="seed"></span></button>
+          </div>
+          <p class="hint li-caps" id="caps" hidden>caps lock is on</p>
+        </div>
+        <p class="hint li-linkhint" hidden>We'll email you a one-time link that opens your dashboard. No password needed.</p>
+        <div class="li-row">
+          <label class="li-check"><input type="checkbox" name="remember"> <span>remember me on this device</span></label>
+          <button class="li-forgot" type="button">forgot password?</button>
+        </div>
+        <p class="li-err" id="err" role="alert" hidden><span class="seed hat"></span><span class="li-err-t"></span></p>
+        <button class="btn li-go" type="submit"><span class="li-go-t">open the dashboard</span></button>
+        <p class="vh" role="status" aria-live="polite" data-status></p>
+      </form>
+    </div>
+
+    <div class="li-sent" hidden tabindex="-1">
+      <p class="tag"><span class="seed live" style="color:var(--sky)"></span> link sent</p>
+      <h2 class="d2">check your <em>inbox.</em></h2>
+      <p class="lede">We sent a sign-in link to <b data-sent-to></b>. Open it on this device and your dashboard opens with it.</p>
+      <p class="li-sent-acts"><button class="btn line" type="button" data-back>back to sign in</button><button class="more li-resend" type="button">send it again <span class="seed"></span></button></p>
+    </div>
 
     <p class="li-alt">new to silvertrees? <a class="more" href="contact.html#start">start a project <span class="seed"></span></a></p>
   </div>
-  <footer class="li-foot"><span>© {YEAR} {COMPANY["name"]}</span><a href="mailto:{COMPANY["support"]}">trouble signing in?</a></footer>
+  <footer class="li-foot"><span class="li-secure"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>secured connection</span><a href="mailto:{COMPANY["support"]}">trouble signing in?</a></footer>
 </main>
+
+<div class="li-hello" aria-hidden="true">
+  <p class="tag">opening your dashboard</p>
+  <p class="d1" data-hello>welcome back.</p>
+</div>
 
 <script src="assets/login.js?v={V}" defer></script>
 </body>
